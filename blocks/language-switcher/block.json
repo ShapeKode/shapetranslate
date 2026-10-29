@@ -1,0 +1,51 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "shapetranslate/language-switcher",
+	"version": "1.0.0",
+	"title": "Language Switcher",
+	"category": "widgets",
+	"icon": "translation",
+	"description": "Display links to available ShapeTranslate languages.",
+	"textdomain": "shapetranslate",
+	"attributes": {
+		"display": {
+			"type": "string",
+			"default": "native_name"
+		},
+		"layout": {
+			"type": "string",
+			"default": "horizontal"
+		},
+		"hideCurrent": {
+			"type": "boolean",
+			"default": false
+		},
+		"hideMissing": {
+			"type": "boolean",
+			"default": false
+		},
+		"unavailableBehavior": {
+			"type": "string",
+			"default": "hide"
+		},
+		"showFlags": {
+			"type": "boolean",
+			"default": false
+		},
+		"showDisabled": {
+			"type": "boolean",
+			"default": false
+		},
+		"ariaLabel": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"supports": {
+		"html": false,
+		"className": true
+	},
+	"editorScript": "file:./index.js",
+	"style": "shapetranslate-switcher"
+}

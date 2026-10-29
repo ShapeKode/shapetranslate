@@ -1,0 +1,66 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "shapetranslate/navigation-language-switcher",
+	"version": "1.0.0",
+	"title": "Language Switcher",
+	"category": "design",
+	"icon": "translation",
+	"description": "Add language links to a Navigation block.",
+	"textdomain": "shapetranslate",
+	"parent": [ "core/navigation" ],
+	"usesContext": [
+		"textColor",
+		"customTextColor",
+		"backgroundColor",
+		"customBackgroundColor",
+		"overlayTextColor",
+		"customOverlayTextColor",
+		"overlayBackgroundColor",
+		"customOverlayBackgroundColor",
+		"fontSize",
+		"customFontSize",
+		"showSubmenuIcon",
+		"submenuVisibility",
+		"openSubmenusOnClick",
+		"maxNestingLevel",
+		"style"
+	],
+	"attributes": {
+		"display": {
+			"type": "string",
+			"default": "native_name"
+		},
+		"dropdown": {
+			"type": "boolean",
+			"default": false
+		},
+		"hideCurrent": {
+			"type": "boolean",
+			"default": false
+		},
+		"hideMissing": {
+			"type": "boolean",
+			"default": false
+		},
+		"unavailableBehavior": {
+			"type": "string",
+			"default": "hide"
+		},
+		"showFlags": {
+			"type": "boolean",
+			"default": false
+		},
+		"showDisabled": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"supports": {
+		"html": false,
+		"reusable": false,
+		"renaming": false
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "shapetranslate-navigation-switcher-editor"
+}

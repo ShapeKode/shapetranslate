@@ -1,0 +1,163 @@
+/**
+ * Editor preview for the navigation language switcher.
+ *
+ * The block stands in for several menu items, so the preview lays its labels out
+ * the way the Navigation block lays out its own children.
+ *
+ * Table of contents
+ *
+ *  1. Block preview
+ *  2. Submenu preview
+ *  3. Media queries
+ */
+
+/* ------------------------------------------------------------------------
+ * 1. Block preview
+ * ------------------------------------------------------------------------ */
+
+.wp-block-shapetranslate-navigation-language-switcher {
+	display: flex;
+	align-items: center;
+	gap: var( --wp--style--block-gap, 0.5rem );
+	flex-wrap: wrap;
+}
+
+.wp-block-shapetranslate-navigation-language-switcher .shapetranslate-switcher__item {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4em;
+}
+
+/**
+ * A language that will render without a link, because it is disabled or because
+ * the site publishes nothing in it and the block was told to show those anyway.
+ */
+.wp-block-shapetranslate-navigation-language-switcher .shapetranslate-switcher__item--unavailable {
+	opacity: 0.5;
+}
+
+.wp-block-shapetranslate-navigation-language-switcher .shapetranslate-switcher__flag {
+	display: inline-block;
+	width: 16px;
+	height: 11px;
+	flex: 0 0 auto;
+	border-radius: 1px;
+	/* The flag files are not all one shape, and a menu row is not the place to find that out. */
+	object-fit: cover;
+}
+
+.wp-block-shapetranslate-navigation-language-switcher .shapetranslate-switcher-preview__notice {
+	opacity: 0.7;
+	font-style: italic;
+}
+
+/* End 1. Block preview */
+
+/* ------------------------------------------------------------------------
+ * 2. Submenu preview
+ *
+ * The rendered menu hangs its panel off the item and out of the flow, so the
+ * preview does the same: a header that grew taller the moment a submenu was
+ * switched on would be showing a layout no reader will ever meet.
+ *
+ * The panel opens while the block is selected. Whoever is changing these
+ * settings is holding the block, and whoever is not sees the menu closed, as a
+ * reader will first meet it.
+ * ------------------------------------------------------------------------ */
+
+.wp-block-shapetranslate-navigation-language-switcher.shapetranslate-switcher-preview--submenu {
+	position: relative;
+	/* One row: the label and its arrow, with the panel measured from the item. */
+	display: inline-flex;
+	align-items: center;
+	flex-wrap: nowrap;
+	gap: 0;
+}
+
+.wp-block-shapetranslate-navigation-language-switcher .shapetranslate-switcher-preview__toggle {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4em;
+	white-space: nowrap;
+}
+
+.wp-block-shapetranslate-navigation-language-switcher .shapetranslate-switcher-preview__icon {
+	display: inline-flex;
+	align-items: center;
+	flex: 0 0 auto;
+	margin-left: 0.25em;
+	transition: transform 0.15s ease;
+}
+
+.wp-block-shapetranslate-navigation-language-switcher.shapetranslate-switcher-preview--open .shapetranslate-switcher-preview__icon {
+	transform: rotate( 180deg );
+}
+
+.wp-block-shapetranslate-navigation-language-switcher .shapetranslate-switcher-preview__submenu {
+	display: none;
+	position: absolute;
+	z-index: 28;
+	top: calc( 100% + 0.4rem );
+	inset-inline-start: 0;
+	/*
+	 * Never narrower than the item it hangs from. A panel that stopped at its
+	 * longest label left a stub sitting under a wide label, which read as a
+	 * mistake rather than as a menu.
+	 */
+	width: max-content;
+	min-width: 100%;
+	flex-direction: column;
+	gap: 0.4rem;
+	margin: 0;
+	/*
+	 * Top and bottom only. The Navigation block's own stylesheet clears the
+	 * inline padding of every list inside it, so the space at the sides is set
+	 * on the rows instead, where nothing is competing for it — and a row that
+	 * owns its inset can be highlighted edge to edge later on.
+	 */
+	padding: 0.6rem 0;
+	list-style: none;
+	/*
+	 * System colors, so the panel is legible against whichever background the
+	 * theme gave the header without the preview having to guess at it. The
+	 * border follows the text color rather than matching it: a full-strength
+	 * rule around a small panel is the loudest thing on the canvas.
+	 */
+	border: 1px solid currentColor;
+	border-color: color-mix( in srgb, currentColor 20%, transparent );
+	border-radius: 4px;
+	box-shadow: 0 6px 18px rgba( 0, 0, 0, 0.14 );
+	background: Canvas;
+	color: CanvasText;
+	text-align: start;
+}
+
+.wp-block-shapetranslate-navigation-language-switcher.shapetranslate-switcher-preview--open .shapetranslate-switcher-preview__submenu {
+	display: flex;
+}
+
+.wp-block-shapetranslate-navigation-language-switcher .shapetranslate-switcher-preview__child {
+	display: block;
+	margin: 0;
+	/* Written twice, so the inset survives in a right-to-left canvas too. */
+	padding: 0 1.1rem;
+	padding-inline: 1.1rem;
+	white-space: nowrap;
+}
+
+/* End 2. Submenu preview */
+
+/* ------------------------------------------------------------------------
+ * 3. Media queries
+ *
+ * Grouped here, at the end of the file, so every responsive and preference
+ * override for this stylesheet is read in one place.
+ * ------------------------------------------------------------------------ */
+
+@media ( prefers-reduced-motion: reduce ) {
+	.wp-block-shapetranslate-navigation-language-switcher .shapetranslate-switcher-preview__icon {
+		transition: none;
+	}
+}
+
+/* End 3. Media queries */

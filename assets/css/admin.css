@@ -1,0 +1,1226 @@
+/**
+ * ShapeTranslate admin styles.
+ *
+ * Loaded only on ShapeTranslate screens and on the list tables, meta boxes and
+ * term forms the plugin adds a column or a field to. Every selector is
+ * prefixed with `shapetranslate` so nothing here can reach another plugin's
+ * markup; the few core class names that appear are always qualified by a
+ * ShapeTranslate ancestor.
+ *
+ * Table of contents
+ *
+ *  1. Languages screen
+ *  2. Language editor form
+ *  3. Settings screen shell
+ *  4. Setup wizard
+ *  5. Settings matrices: menu locations and default terms
+ *  6. Term forms and list table columns
+ *  7. Translation state chips
+ *  8. Translation meta box
+ *  9. Translation dashboard
+ * 10. String translation screen
+ * 11. Language flags
+ * 12. Flag select listbox
+ * 13. Setup wizard language list
+ * 14. Settings: switcher usage snippet
+ * 15. Media queries
+ */
+
+/* ------------------------------------------------------------------------
+ * 1. Languages screen
+ * ------------------------------------------------------------------------ */
+
+.shapetranslate-heading {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-bottom: 16px;
+}
+
+.shapetranslate-heading h1 {
+	margin: 0;
+}
+
+.shapetranslate-language-table .shapetranslate-native-name {
+	display: block;
+	margin-top: 2px;
+	color: #646970;
+}
+
+.shapetranslate-inline-form {
+	display: inline;
+	margin: 0;
+}
+
+.shapetranslate-status-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-top: 6px;
+}
+
+.shapetranslate-status {
+	display: inline-block;
+	font-weight: 600;
+}
+
+.shapetranslate-status.is-enabled {
+	color: #008a20;
+}
+
+.shapetranslate-status.is-disabled {
+	color: #646970;
+}
+
+.shapetranslate-default-label {
+	display: inline-block;
+	margin-left: 6px;
+	padding: 1px 6px;
+	border: 1px solid #8c8f94;
+	border-radius: 3px;
+	color: #2c3338;
+	font-size: 11px;
+	line-height: 1.5;
+	text-transform: uppercase;
+}
+
+.shapetranslate-order-column {
+	width: 100px;
+	text-align: center;
+}
+
+.shapetranslate-icon-button {
+	min-width: 32px;
+	min-height: 30px;
+	padding: 2px 4px;
+}
+
+.shapetranslate-icon-button .dashicons {
+	vertical-align: middle;
+}
+
+/* End 1. Languages screen */
+
+/* ------------------------------------------------------------------------
+ * 2. Language editor form
+ * ------------------------------------------------------------------------ */
+
+.shapetranslate-language-form {
+	max-width: 760px;
+}
+
+/* End 2. Language editor form */
+
+/* ------------------------------------------------------------------------
+ * 3. Settings screen shell
+ * ------------------------------------------------------------------------ */
+
+.shapetranslate-settings {
+	max-width: 1180px;
+}
+
+.shapetranslate-settings h2 {
+	margin-top: 28px;
+}
+
+.shapetranslate-settings-tabs {
+	margin-bottom: 20px;
+}
+
+.shapetranslate-settings .form-table {
+	max-width: 960px;
+}
+
+.shapetranslate-settings .notice.inline {
+	max-width: 920px;
+}
+
+.shapetranslate-option-list {
+	display: flex;
+	flex-direction: column;
+	gap: 9px;
+}
+
+.shapetranslate-checkbox-grid {
+	display: grid;
+	grid-template-columns: repeat( 2, minmax( 220px, 1fr ) );
+	gap: 7px 24px;
+	max-width: 760px;
+	margin-top: 6px;
+	padding: 12px;
+	border: 1px solid #dcdcde;
+	background: #fff;
+}
+
+.shapetranslate-checkbox-grid code {
+	color: #646970;
+}
+
+.shapetranslate-sync-intro {
+	max-width: 760px;
+	margin-bottom: 12px;
+}
+
+.shapetranslate-sync-hint {
+	display: block;
+	margin-left: 25px;
+}
+
+.shapetranslate-settings hr {
+	margin: 28px 0 0;
+	border: 0;
+	border-top: 1px solid #c3c4c7;
+}
+
+/* End 3. Settings screen shell */
+
+/* ------------------------------------------------------------------------
+ * 4. Setup wizard
+ * ------------------------------------------------------------------------ */
+
+.shapetranslate-setup-wizard {
+	max-width: 980px;
+}
+
+.shapetranslate-wizard-progress {
+	display: grid;
+	grid-template-columns: repeat( 5, minmax( 0, 1fr ) );
+	margin: 24px 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+.shapetranslate-wizard-progress li {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	align-items: center;
+	padding: 0 8px 16px;
+	border-bottom: 3px solid #c3c4c7;
+	color: #646970;
+	font-size: 12px;
+	font-weight: 600;
+	text-align: center;
+}
+
+.shapetranslate-wizard-progress span {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	width: 30px;
+	height: 30px;
+	border: 2px solid #8c8f94;
+	border-radius: 50%;
+	background: #f0f0f1;
+}
+
+.shapetranslate-wizard-progress .is-complete,
+.shapetranslate-wizard-progress .is-current {
+	border-bottom-color: #2271b1;
+	color: #1d2327;
+}
+
+.shapetranslate-wizard-progress .is-complete span,
+.shapetranslate-wizard-progress .is-current span {
+	border-color: #2271b1;
+	background: #2271b1;
+	color: #fff;
+}
+
+.shapetranslate-wizard-content {
+	min-height: 330px;
+	padding: 28px 0 0;
+}
+
+.shapetranslate-wizard-content h2 {
+	margin-top: 0;
+	font-size: 23px;
+}
+
+.shapetranslate-wizard-content .form-table {
+	max-width: 820px;
+}
+
+.shapetranslate-wizard-actions {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}
+
+.shapetranslate-wizard-links {
+	display: flex;
+	gap: 18px;
+}
+
+/* End 4. Setup wizard */
+
+/* ------------------------------------------------------------------------
+ * 5. Settings matrices: menu locations and default terms
+ * ------------------------------------------------------------------------ */
+
+.shapetranslate-settings-table th,
+.shapetranslate-settings-table td {
+	vertical-align: middle;
+}
+
+.shapetranslate-settings-table select {
+	width: 100%;
+	max-width: 320px;
+}
+
+/*
+ * The language matrices scroll inside their own container rather than as
+ * `display: block` tables, so the table keeps real table layout and the cells
+ * keep the padding `.widefat` gives them.
+ */
+
+.shapetranslate-matrix-scroll {
+	margin-top: 12px;
+	overflow-x: auto;
+	border-radius: 4px;
+}
+
+.shapetranslate-matrix-scroll .shapetranslate-settings-table {
+	border-radius: 0;
+}
+
+.shapetranslate-menu-location-table th,
+.shapetranslate-menu-location-table td,
+.shapetranslate-default-term-table th,
+.shapetranslate-default-term-table td {
+	padding: 12px 14px;
+	min-width: 230px;
+}
+
+.shapetranslate-menu-location-table thead th,
+.shapetranslate-default-term-table thead th {
+	font-weight: 600;
+	white-space: nowrap;
+}
+
+/* The first column labels the row, so it stays narrow and never wraps. */
+
+.shapetranslate-menu-location-table th[scope="row"],
+.shapetranslate-menu-location-table thead th:first-child,
+.shapetranslate-default-term-table th[scope="row"],
+.shapetranslate-default-term-table thead th:first-child {
+	min-width: 0;
+	width: 1%;
+	white-space: nowrap;
+}
+
+.shapetranslate-default-term-table th[scope="row"] code {
+	margin-inline-start: 4px;
+	font-size: 11px;
+}
+
+.shapetranslate-matrix-label {
+	font-weight: 600;
+}
+
+/* Wide enough for the placeholder option, which is the longest label here. */
+
+.shapetranslate-menu-location-table select,
+.shapetranslate-default-term-table select {
+	width: 100%;
+	min-width: 200px;
+	max-width: 100%;
+}
+
+/* End 5. Settings matrices: menu locations and default terms */
+
+/* ------------------------------------------------------------------------
+ * 6. Term forms and list table columns
+ * ------------------------------------------------------------------------ */
+
+.term-shapetranslate-language-wrap select {
+	width: 100%;
+	max-width: 360px;
+}
+
+.term-shapetranslate-translations-wrap .shapetranslate-translation-links {
+	max-width: 420px;
+}
+
+.column-shapetranslate_language {
+	width: 90px;
+}
+
+.column-shapetranslate_translations {
+	width: 140px;
+}
+
+.shapetranslate-list-language {
+	display: inline-flex;
+	align-items: center;
+	white-space: nowrap;
+}
+
+.shapetranslate-unassigned {
+	color: #646970;
+}
+
+/* End 6. Term forms and list table columns */
+
+/* ------------------------------------------------------------------------
+ * 7. Translation state chips
+ * ------------------------------------------------------------------------ */
+
+.shapetranslate-list-translations,
+.shapetranslate-translations-heading {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 9px 12px;
+}
+
+/* Column heading legend: one flag per enabled language, aligned to the chips. */
+
+.shapetranslate-translations-heading-flag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 24px;
+}
+
+.shapetranslate-translations-heading .shapetranslate-flag {
+	margin: 0;
+}
+
+/* Flag-only status chips: the flag is the label, a corner badge is the state. */
+
+.shapetranslate-translation-state {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	width: 24px;
+	height: 18px;
+	padding: 0;
+	border: 1px solid #dcdcde;
+	border-radius: 3px;
+	background: #fff;
+	line-height: 1;
+	text-align: center;
+	text-decoration: none;
+	transition: border-color 0.15s ease, opacity 0.15s ease, filter 0.15s ease;
+}
+
+.shapetranslate-translation-state .shapetranslate-flag {
+	width: 100%;
+	height: 100%;
+	border-radius: 2px;
+	box-shadow: none;
+	vertical-align: middle;
+}
+
+.shapetranslate-translation-code {
+	font-size: 9px;
+	font-weight: 600;
+	line-height: 1;
+}
+
+.shapetranslate-translation-badge {
+	position: absolute;
+	right: -4px;
+	inset-inline-end: -4px;
+	bottom: -4px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	border-radius: 50%;
+	background: #fff;
+	box-shadow: 0 0 0 1px #fff;
+}
+
+.shapetranslate-translation-badge.dashicons {
+	width: 12px;
+	height: 12px;
+	font-size: 9px;
+	line-height: 12px;
+}
+
+.shapetranslate-translation-state.has-translation {
+	border-color: #b0d8bd;
+	color: #1d2327;
+}
+
+.shapetranslate-translation-state.has-translation .shapetranslate-translation-badge {
+	background: #00a32a;
+	color: #fff;
+}
+
+.shapetranslate-translation-state.missing-translation {
+	border-style: dashed;
+	color: #646970;
+	opacity: 0.65;
+	filter: grayscale( 1 );
+}
+
+.shapetranslate-translation-state.missing-translation .shapetranslate-translation-badge {
+	background: #f6f7f7;
+	color: #646970;
+	box-shadow: 0 0 0 1px #fff, inset 0 0 0 1px #dcdcde;
+}
+
+a.shapetranslate-translation-state:hover,
+a.shapetranslate-translation-state:focus {
+	border-color: #2271b1;
+	opacity: 1;
+	filter: none;
+}
+
+a.shapetranslate-translation-state:focus {
+	outline: 2px solid transparent;
+	box-shadow: 0 0 0 2px #2271b1;
+}
+
+/* End 7. Translation state chips */
+
+/* ------------------------------------------------------------------------
+ * 8. Translation meta box
+ * ------------------------------------------------------------------------ */
+
+.shapetranslate-meta-box-translations {
+	margin-top: 14px;
+	padding-top: 12px;
+	border-top: 1px solid #dcdcde;
+}
+
+.shapetranslate-meta-box-translations h4 {
+	margin: 0 0 8px;
+	font-size: 13px;
+}
+
+.shapetranslate-translation-links {
+	margin: 0;
+}
+
+.shapetranslate-translation-links li {
+	display: grid;
+	grid-template-columns: minmax( 38px, auto ) minmax( 0, 1fr );
+	gap: 8px;
+	align-items: start;
+	margin: 0;
+	padding: 7px 0;
+	border-bottom: 1px solid #f0f0f1;
+}
+
+.shapetranslate-translation-links li:last-child {
+	border-bottom: 0;
+}
+
+.shapetranslate-language-code {
+	font-weight: 600;
+}
+
+.shapetranslate-translation-action {
+	display: flex;
+	align-items: center;
+	min-width: 0;
+	min-height: 30px;
+	overflow-wrap: anywhere;
+}
+
+.shapetranslate-translation-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	width: 30px;
+	height: 30px;
+	border: 1px solid #c3c4c7;
+	border-radius: 3px;
+	background: #fff;
+	color: #2c3338;
+	text-decoration: none;
+}
+
+.shapetranslate-translation-icon .dashicons {
+	width: 18px;
+	height: 18px;
+	font-size: 18px;
+	line-height: 18px;
+}
+
+.shapetranslate-translation-icon.is-add,
+.shapetranslate-translation-icon.is-edit {
+	border-color: #72aee6;
+	color: #135e96;
+}
+
+.shapetranslate-translation-icon.is-add:hover,
+.shapetranslate-translation-icon.is-edit:hover,
+.shapetranslate-translation-icon.is-add:focus,
+.shapetranslate-translation-icon.is-edit:focus {
+	border-color: #2271b1;
+	color: #0a4b78;
+}
+
+.shapetranslate-translation-icon.is-current {
+	border-color: #68a67a;
+	color: #176b32;
+}
+
+.shapetranslate-translation-icon.is-unavailable {
+	border-color: #dcdcde;
+	color: #8c8f94;
+}
+
+/* End 8. Translation meta box */
+
+/* ------------------------------------------------------------------------
+ * 9. Translation dashboard
+ * ------------------------------------------------------------------------ */
+
+.shapetranslate-translation-dashboard .search-box {
+	margin-bottom: 8px;
+}
+
+.shapetranslate-translation-dashboard .column-content {
+	min-width: 260px;
+}
+
+.shapetranslate-translation-dashboard th[class*="column-language_"],
+.shapetranslate-translation-dashboard td[class*="column-language_"] {
+	width: 130px;
+	text-align: center;
+}
+
+.shapetranslate-dashboard-content-meta {
+	margin-top: 3px;
+	color: #646970;
+	font-size: 12px;
+}
+
+.shapetranslate-dashboard-state {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	width: 32px;
+	height: 32px;
+	border: 1px solid #c3c4c7;
+	border-radius: 3px;
+	background: #fff;
+	text-decoration: none;
+}
+
+.shapetranslate-dashboard-state .dashicons {
+	width: 18px;
+	height: 18px;
+	font-size: 18px;
+	line-height: 18px;
+}
+
+.shapetranslate-dashboard-state.is-complete {
+	border-color: #68a67a;
+	color: #176b32;
+}
+
+.shapetranslate-dashboard-state.is-draft {
+	border-color: #dba617;
+	color: #775d00;
+}
+
+.shapetranslate-dashboard-state.is-missing {
+	border-color: #72aee6;
+	color: #135e96;
+}
+
+.shapetranslate-dashboard-state.is-unavailable {
+	border-color: #dcdcde;
+	color: #8c8f94;
+}
+
+a.shapetranslate-dashboard-state:hover,
+a.shapetranslate-dashboard-state:focus {
+	border-color: #2271b1;
+	color: #0a4b78;
+}
+
+.shapetranslate-dashboard-unavailable {
+	color: #8c8f94;
+}
+
+/* End 9. Translation dashboard */
+
+/* ------------------------------------------------------------------------
+ * 10. String translation screen
+ * ------------------------------------------------------------------------ */
+
+.shapetranslate-gettext-scan {
+	margin: 16px 0;
+	padding: 12px 16px;
+	background: #fff;
+	border: 1px solid #c3c4c7;
+}
+
+.shapetranslate-gettext-scan h2 {
+	margin: 0 0 4px;
+}
+
+.shapetranslate-gettext-scan form {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 6px;
+	margin-top: 8px;
+}
+
+.shapetranslate-gettext-scan select {
+	max-width: 100%;
+}
+
+.shapetranslate-string-filters {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	margin: 12px 0 8px;
+}
+
+.shapetranslate-string-filters .search-box {
+	margin-left: auto;
+}
+
+.shapetranslate-string-translation-page .column-identity {
+	width: 220px;
+}
+
+.shapetranslate-string-translation-page .column-original,
+.shapetranslate-string-translation-page .column-translation {
+	width: 38%;
+}
+
+.shapetranslate-string-key {
+	display: block;
+	margin-top: 5px;
+	overflow-wrap: anywhere;
+}
+
+.shapetranslate-string-original {
+	max-width: 620px;
+	white-space: normal;
+	overflow-wrap: anywhere;
+}
+
+/*
+ * Deliberately specific. The field has to beat the width core gives
+ * .large-text, which is meant for settings forms, and it shares an admin with
+ * whatever other plugins enqueue after this file. Anything less loses the
+ * moment one of them styles textareas inside a list table.
+ */
+
+.shapetranslate-string-translation-page td.column-translation textarea.shapetranslate-string-translation {
+	box-sizing: border-box;
+	display: block;
+	min-height: 72px;
+	resize: vertical;
+	width: 100%;
+}
+
+/*
+ * The all-languages view holds one field per language in a single cell. Source
+ * order alternates label, field, label, field, so implicit grid placement lands
+ * every name in the first column and every box in the second. One grid column
+ * keeps the boxes aligned down the whole table, which is what makes a stack of
+ * them readable.
+ */
+
+.shapetranslate-string-translations {
+	min-width: 0;
+}
+
+.shapetranslate-string-translations--labelled {
+	align-items: start;
+	display: grid;
+	/*
+	 * The label column hugs its content, which is a flag and a two or three
+	 * letter code, so every box gets the whole rest of the cell.
+	 */
+	gap: 8px 12px;
+	grid-template-columns: max-content minmax(0, 1fr);
+}
+
+/*
+ * A row here is as tall as its languages stacked, so the boxes start shorter
+ * than in the single-language view. They still resize, and a long value still
+ * scrolls, so nothing is lost by not showing three lines of every one.
+ */
+
+.shapetranslate-string-translation-page td.column-translation .shapetranslate-string-translations--labelled textarea.shapetranslate-string-translation {
+	height: 54px;
+	min-height: 0;
+}
+
+.shapetranslate-string-language {
+	align-items: center;
+	display: flex;
+	font-weight: 600;
+	gap: 8px;
+	white-space: nowrap;
+	/* Aligns the label with the first line inside the box beside it. */
+	padding-top: 7px;
+}
+
+.shapetranslate-strings-all-languages .column-identity {
+	width: 200px;
+}
+
+/*
+ * Originals are short labels and headings; the space they would waste is worth
+ * more to a cell holding one box per language.
+ */
+
+.shapetranslate-strings-all-languages .column-original {
+	width: 22%;
+}
+
+.shapetranslate-strings-all-languages .column-translation {
+	width: auto;
+}
+
+.shapetranslate-string-translation-page td.column-translation label.shapetranslate-string-language {
+	display: flex;
+	width: auto;
+}
+
+.shapetranslate-string-translation-page td.column-translation textarea.shapetranslate-string-translation {
+	margin-bottom: 0;
+}
+
+/* End 10. String translation screen */
+
+/* ------------------------------------------------------------------------
+ * 11. Language flags
+ * ------------------------------------------------------------------------ */
+
+/* Language flags. */
+
+.shapetranslate-flag {
+	display: inline-block;
+	flex: 0 0 auto;
+	width: 18px;
+	height: 12px;
+	border-radius: 2px;
+	box-shadow: 0 0 0 1px rgba( 0, 0, 0, 0.14 );
+	object-fit: cover;
+	vertical-align: -2px;
+}
+
+.column-shapetranslate_language .shapetranslate-flag,
+.shapetranslate-language-table .shapetranslate-flag {
+	margin-right: 5px;
+}
+
+.shapetranslate-translation-links li {
+	grid-template-columns: minmax( 58px, auto ) minmax( 0, 1fr );
+}
+
+.shapetranslate-language-code {
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.shapetranslate-dashboard-table th .shapetranslate-flag,
+.wp-list-table th .shapetranslate-flag {
+	margin-right: 5px;
+}
+
+/* End 11. Language flags */
+
+/* ------------------------------------------------------------------------
+ * 12. Flag select listbox
+ * ------------------------------------------------------------------------ */
+
+/* Language select enhanced with a flag beside every option. */
+
+.shapetranslate-flag-select {
+	position: relative;
+	max-width: 25em;
+}
+
+/*
+ * Every one of these is hidden through the hidden attribute, which the admin
+ * stylesheet can outweigh on an element it already styles. Restating it here
+ * keeps the native select out of sight once the listbox has replaced it, and
+ * keeps an option the search filtered out from holding on to its row.
+ */
+
+.shapetranslate-flag-select.is-enhanced > select[hidden],
+.shapetranslate-flag-select .shapetranslate-flag-select__panel[hidden],
+.shapetranslate-flag-select .shapetranslate-flag-select__option[hidden],
+.shapetranslate-flag-select .shapetranslate-flag-select__empty[hidden] {
+	display: none;
+}
+
+.shapetranslate-flag-select__toggle {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	box-sizing: border-box;
+	width: 100%;
+	min-height: 30px;
+	margin: 0;
+	padding: 4px 28px 4px 8px;
+	border: 1px solid #8c8f94;
+	border-radius: 3px;
+	background: #fff;
+	color: #2c3338;
+	font-size: 14px;
+	line-height: 1.5;
+	text-align: left;
+	cursor: pointer;
+}
+
+.shapetranslate-flag-select__toggle::after {
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	width: 0;
+	height: 0;
+	margin-top: -2px;
+	border-top: 5px solid #646970;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+	content: "";
+}
+
+.shapetranslate-flag-select__toggle:hover {
+	border-color: #646970;
+}
+
+.shapetranslate-flag-select__toggle:focus {
+	border-color: #2271b1;
+	outline: 2px solid transparent;
+	box-shadow: 0 0 0 1px #2271b1;
+}
+
+/*
+ * The popup chrome lives on the panel rather than the list, so the search field
+ * stays fixed at the top while only the options below it scroll.
+ */
+
+.shapetranslate-flag-select__panel {
+	position: absolute;
+	z-index: 100;
+	top: calc( 100% + 2px );
+	right: 0;
+	left: 0;
+	box-sizing: border-box;
+	border: 1px solid #8c8f94;
+	border-radius: 3px;
+	background: #fff;
+	box-shadow: 0 2px 8px rgba( 0, 0, 0, 0.14 );
+}
+
+.shapetranslate-flag-select__search {
+	display: block;
+	box-sizing: border-box;
+	width: calc( 100% - 16px );
+	margin: 8px;
+}
+
+.shapetranslate-flag-select__list {
+	box-sizing: border-box;
+	max-height: 280px;
+	margin: 0;
+	padding: 4px 0;
+	overflow-y: auto;
+	list-style: none;
+}
+
+.shapetranslate-flag-select__list:focus {
+	outline: none;
+}
+
+.shapetranslate-flag-select__empty {
+	margin: 0;
+	padding: 8px 10px;
+	color: #646970;
+}
+
+.shapetranslate-flag-select__option {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin: 0;
+	padding: 6px 10px;
+	line-height: 1.5;
+	cursor: pointer;
+}
+
+.shapetranslate-flag-select__option.is-selected {
+	font-weight: 600;
+}
+
+.shapetranslate-flag-select__option.is-active {
+	background: #f0f0f1;
+}
+
+/*
+ * Rendered for every option, including the languages with no bundled flag, so
+ * the labels stay on one vertical line down the whole list.
+ */
+
+.shapetranslate-flag-select__flag {
+	display: inline-flex;
+	flex: 0 0 18px;
+	align-items: center;
+	justify-content: center;
+	width: 18px;
+	height: 12px;
+}
+
+.shapetranslate-flag-select__label {
+	flex: 1 1 auto;
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/* End 12. Flag select listbox */
+
+/* ------------------------------------------------------------------------
+ * 13. Setup wizard language list
+ * ------------------------------------------------------------------------ */
+
+/* Setup wizard: the language list and the URL format choices. */
+
+.shapetranslate-wizard-languages {
+	margin: 0 0 16px;
+}
+
+.shapetranslate-wizard-languages td,
+.shapetranslate-wizard-languages th {
+	vertical-align: middle;
+}
+
+.shapetranslate-wizard-languages code {
+	background: none;
+	padding: 0;
+}
+
+.shapetranslate-wizard-remove {
+	color: #b32d2e;
+	text-decoration: none;
+}
+
+.shapetranslate-wizard-remove:hover,
+.shapetranslate-wizard-remove:focus {
+	color: #8a2424;
+}
+
+.shapetranslate-wizard-add {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 10px;
+	padding: 14px;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+	background: #f6f7f7;
+}
+
+.shapetranslate-wizard-add .shapetranslate-flag-select {
+	flex: 1 1 260px;
+	max-width: 420px;
+}
+
+/* End 13. Setup wizard language list */
+
+/* ------------------------------------------------------------------------
+ * 14. Settings: switcher usage snippet
+ * ------------------------------------------------------------------------ */
+
+/* Settings > Switcher: the shortcode that mirrors the controls above it. */
+
+.shapetranslate-usage {
+	max-width: 780px;
+	margin: 0 0 16px;
+}
+
+.shapetranslate-usage__label {
+	margin: 14px 0 6px;
+	font-weight: 600;
+}
+
+.shapetranslate-usage__snippet {
+	display: flex;
+	align-items: flex-start;
+	gap: 8px;
+}
+
+.shapetranslate-usage__snippet > code {
+	flex: 1 1 auto;
+	/* Without this a long shortcode stretches the flex item past the container. */
+	min-width: 0;
+	box-sizing: border-box;
+	display: block;
+	margin: 0;
+	padding: 10px 12px;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+	background: #f6f7f7;
+	font-size: 13px;
+	line-height: 1.6;
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.shapetranslate-usage__snippet .button {
+	flex: 0 0 auto;
+	margin-top: 3px;
+}
+
+.shapetranslate-option-list--examples label {
+	display: grid;
+	grid-template-columns: auto minmax( 0, 1fr );
+	align-items: baseline;
+	gap: 2px 8px;
+}
+
+.shapetranslate-option-list--examples label > code {
+	grid-column: 2;
+	justify-self: start;
+	color: #50575e;
+	font-size: 12px;
+}
+
+.shapetranslate-domain-panel label {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+}
+
+.shapetranslate-domain-panel .shapetranslate-language-code {
+	min-width: 160px;
+}
+
+/* End 14. Settings: switcher usage snippet */
+
+/* ------------------------------------------------------------------------
+ * 15. Media queries
+ *
+ * Grouped here, at the end of the file, so every responsive and preference
+ * override for this stylesheet is read in one place.
+ * ------------------------------------------------------------------------ */
+
+/* Narrow viewports. */
+
+@media screen and ( max-width: 782px ) {
+	.shapetranslate-checkbox-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.shapetranslate-settings-tabs {
+		display: flex;
+		flex-wrap: wrap;
+	}
+}
+
+@media screen and ( max-width: 782px ) {
+	.shapetranslate-wizard-progress li {
+		padding-right: 2px;
+		padding-left: 2px;
+		font-size: 10px;
+	}
+
+	.shapetranslate-wizard-progress span {
+		width: 26px;
+		height: 26px;
+	}
+}
+
+@media screen and ( max-width: 782px ) {
+	.shapetranslate-menu-location-table th,
+	.shapetranslate-menu-location-table td,
+	.shapetranslate-default-term-table th,
+	.shapetranslate-default-term-table td {
+		padding: 10px;
+		min-width: 200px;
+	}
+}
+
+@media screen and (max-width: 782px) {
+	.shapetranslate-heading {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
+	.shapetranslate-order-column {
+		width: auto;
+		text-align: left;
+	}
+
+	.column-shapetranslate_language,
+	.column-shapetranslate_translations {
+		width: auto;
+	}
+
+	.shapetranslate-translation-dashboard th[class*="column-language_"],
+	.shapetranslate-translation-dashboard td[class*="column-language_"] {
+		width: auto;
+		text-align: left;
+	}
+
+	.shapetranslate-string-filters {
+		align-items: stretch;
+		flex-direction: column;
+	}
+
+	.shapetranslate-string-filters select,
+	.shapetranslate-string-filters .button,
+	.shapetranslate-string-filters .search-box,
+	.shapetranslate-string-filters .search-box input {
+		width: 100%;
+		margin: 0;
+	}
+
+	.shapetranslate-string-translation-page .column-identity,
+	.shapetranslate-string-translation-page .column-original,
+	.shapetranslate-string-translation-page .column-translation {
+		width: auto;
+	}
+
+	/*
+	 * A flag and a language code still fit beside a usable box in what a stacked
+	 * list table leaves next to its column name, so the pairs stay side by side
+	 * on a phone and only the boxes get shorter.
+	 */
+	.shapetranslate-string-translation-page td.column-translation textarea.shapetranslate-string-translation {
+		min-height: 52px;
+	}
+
+	.shapetranslate-string-translation-page td.column-translation .shapetranslate-string-translations--labelled textarea.shapetranslate-string-translation {
+		height: 48px;
+	}
+}
+
+/* Wider viewports. */
+
+/*
+ * Core names a list table cell after its column, so this one carries a bare
+ * "translation" class as well as "column-translation". Polylang styles that
+ * exact class for its own strings screen -- it turns the cell into a flex
+ * container and gives labels a percentage width -- and its admin stylesheet
+ * loads on every admin screen, this one included. A td that is no longer a
+ * table-cell drops out of the column it belongs to, which is what collapses
+ * the field to a few characters wide. Undo it for our table only, and only
+ * above the width where core stacks the cells on purpose.
+ */
+
+@media screen and (min-width: 783px) {
+	.shapetranslate-string-translation-page table.wp-list-table td.column-translation {
+		display: table-cell;
+	}
+}
+
+/* End 15. Media queries */

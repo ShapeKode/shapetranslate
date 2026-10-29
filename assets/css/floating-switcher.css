@@ -1,0 +1,395 @@
+/**
+ * The floating switcher, and nothing else.
+ *
+ * Loaded only on a page that prints one, so a site that placed its switcher
+ * in a menu or a template never pays for the strip it does not use.
+ *
+ * Everything here is scoped to `.shapetranslate-switcher--floating`, because this
+ * is the one switcher that is not part of a theme's design. Every other
+ * placement sits inside a header, a footer, or a post and inherits the type and
+ * color around it; this one is drawn over the page and has nothing to inherit
+ * from, so it brings its own. The colors are custom properties rather than
+ * literals for exactly that reason - a theme overrides the four of them and the
+ * strip belongs to it again.
+ *
+ * Table of contents
+ *
+ *  1. Strip shell and palette
+ *  2. Placement
+ *  3. List and links
+ *  4. Vertical placements
+ *  5. Flags, unavailable items and dropdown
+ *  6. Media queries
+ */
+
+/* ------------------------------------------------------------------------
+ * 1. Strip shell and palette
+ * ------------------------------------------------------------------------ */
+
+/*
+ * The floating switcher, and nothing else. Loaded only on a page that prints
+ * one, so a site that placed its switcher in a menu or a template never pays
+ * for the strip it does not use.
+ *
+ * Everything here is scoped to `.shapetranslate-switcher--floating`, because this
+ * is the one switcher that is not part of a theme's design. Every other
+ * placement sits inside a header, a footer, or a post and inherits the type and
+ * color around it; this one is drawn over the page and has nothing to inherit
+ * from, so it brings its own. The colors are custom properties rather than
+ * literals for exactly that reason — a theme overrides the four of them and the
+ * strip belongs to it again.
+ */
+
+.shapetranslate-switcher--floating {
+	--shapetranslate-floating-bg: #f0f0f2;
+	--shapetranslate-floating-text: #1d1d1f;
+	--shapetranslate-floating-current-bg: #101012;
+	--shapetranslate-floating-current-text: #ffffff;
+	--shapetranslate-floating-radius: 999px;
+
+	/*
+	 * How far a pill moves when it is pointed at, and in which direction. Each
+	 * placement below sets the sign, because only the placement knows which
+	 * side of the screen the strip is pinned to. Zero here so a strip with no
+	 * placement class still has somewhere to read the value from.
+	 */
+	--shapetranslate-floating-shift: 0px;
+
+	position: fixed;
+	z-index: 9990;
+	max-width: calc( 100vw - 1rem );
+	font-size: 0.875rem;
+	line-height: 1.2;
+}
+
+/* End 1. Strip shell and palette */
+
+/* ------------------------------------------------------------------------
+ * 2. Placement
+ * ------------------------------------------------------------------------ */
+
+/*
+ * Halfway down the side of the screen, flush against the edge it was given.
+ * `translateY` rather than a computed top, so the strip stays centred at any
+ * height without anything having to know how tall it is.
+ *
+ * The physical properties are deliberate. A right-hand strip is a choice about
+ * the screen, not about the text, so it stays on the right in a right-to-left
+ * language instead of crossing over to meet the writing direction.
+ *
+ * Each placement also sets the hover shift, because the direction a pill should
+ * move when it is pointed at follows from the side it is pinned to: away from
+ * that side and into the page, never further out towards the edge it is already
+ * against. A strip on the right therefore moves left, and one on the left moves
+ * right, which is the same gesture read from either side of the screen.
+ */
+
+.shapetranslate-switcher--floating.shapetranslate-switcher--at-middle-right {
+	--shapetranslate-floating-shift: -6px;
+
+	top: 50%;
+	right: 0;
+	bottom: auto;
+	left: auto;
+	transform: translateY( -50% );
+}
+
+.shapetranslate-switcher--floating.shapetranslate-switcher--at-middle-left {
+	--shapetranslate-floating-shift: 6px;
+
+	top: 50%;
+	right: auto;
+	bottom: auto;
+	left: 0;
+	transform: translateY( -50% );
+}
+
+/*
+ * The corners keep a margin instead: a strip wedged into a corner reads as a
+ * rendering fault, and there is no edge for it to be flush against there.
+ */
+
+.shapetranslate-switcher--floating.shapetranslate-switcher--at-bottom-right {
+	--shapetranslate-floating-shift: -6px;
+
+	inset: auto 1rem 1rem auto;
+}
+
+.shapetranslate-switcher--floating.shapetranslate-switcher--at-bottom-left {
+	--shapetranslate-floating-shift: 6px;
+
+	inset: auto auto 1rem 1rem;
+}
+
+.shapetranslate-switcher--floating.shapetranslate-switcher--at-top-right {
+	--shapetranslate-floating-shift: -6px;
+
+	inset: 1rem 1rem auto auto;
+}
+
+.shapetranslate-switcher--floating.shapetranslate-switcher--at-top-left {
+	--shapetranslate-floating-shift: 6px;
+
+	inset: 1rem auto auto 1rem;
+}
+
+/*
+ * The admin bar is fixed over the top of the page for a logged-in visitor, and
+ * a switcher in a top corner lands underneath it. The two offsets are the two
+ * heights the admin bar itself uses, at the width where it changes.
+ */
+
+.admin-bar .shapetranslate-switcher--floating.shapetranslate-switcher--at-top-right,
+.admin-bar .shapetranslate-switcher--floating.shapetranslate-switcher--at-top-left {
+	top: calc( 1rem + 32px );
+}
+
+/* End 2. Placement */
+
+/* ------------------------------------------------------------------------
+ * 3. List and links
+ * ------------------------------------------------------------------------ */
+
+/*
+ * No padding of its own: the pinned side of the strip has to reach the edge of
+ * the screen, and a list that held the pills away from it by even a few pixels
+ * would leave a seam. The gap between pills is the only spacing here, and the
+ * direction of the stack is the shared stylesheet's business, so a horizontal
+ * floater stays a row.
+ *
+ * The gap has to be wide enough to read as air between separate pills rather
+ * than as a seam in one divided block, and wide enough that the pill moving
+ * under the pointer is seen to move rather than seen to collide with the pills
+ * above and below it.
+ */
+
+.shapetranslate-switcher--floating .shapetranslate-switcher__list {
+	gap: 0.5rem;
+	align-items: stretch;
+}
+
+/*
+ * Each language is its own pill rather than a row in a shared box, so the
+ * current one can be filled in without a panel behind it, and so the strip has
+ * no edges of its own to line up against the page.
+ */
+
+.shapetranslate-switcher--floating .shapetranslate-switcher__link,
+.shapetranslate-switcher--floating .shapetranslate-switcher__unavailable,
+.shapetranslate-switcher--floating .shapetranslate-switcher__dropdown > summary {
+	gap: 0.5em;
+	padding: 0.5rem 0.85rem;
+	border-radius: var( --shapetranslate-floating-radius );
+	background: var( --shapetranslate-floating-bg );
+	color: var( --shapetranslate-floating-text );
+	box-shadow: 0 1px 4px rgba( 0, 0, 0, 0.14 );
+	font-weight: 600;
+	text-decoration: none;
+	white-space: nowrap;
+	transition: transform 0.12s ease, background-color 0.12s ease;
+}
+
+/*
+ * The language being read is filled in rather than merely marked, because this
+ * strip is read at a glance from the corner of the eye and a border would not
+ * survive that. `is-current` is the renderer's own class, so this follows the
+ * same item every layout and every context calls current.
+ */
+
+.shapetranslate-switcher--floating .shapetranslate-switcher__item.is-current .shapetranslate-switcher__link {
+	background: var( --shapetranslate-floating-current-bg );
+	color: var( --shapetranslate-floating-current-text );
+}
+
+/*
+ * One rule for all six placements. The distance is the same everywhere and the
+ * direction comes from the placement that set it, so a pill always steps in
+ * from the edge it is pinned to and never out through it. Writing it once is
+ * also what gives the four corners the movement they had no rule for before.
+ */
+
+.shapetranslate-switcher--floating .shapetranslate-switcher__link:hover,
+.shapetranslate-switcher--floating .shapetranslate-switcher__dropdown > summary:hover {
+	transform: translateX( var( --shapetranslate-floating-shift ) ) scale( 1.03 );
+}
+
+/* End 3. List and links */
+
+/* ------------------------------------------------------------------------
+ * 4. Vertical placements
+ * ------------------------------------------------------------------------ */
+
+/*
+ * The side against the screen is squared off so the strip reads as attached to
+ * the edge rather than as a row of pills that happen to be near it. Only the
+ * two middle positions touch an edge; a corner keeps its margin and stays
+ * round on all four sides.
+ */
+
+.shapetranslate-switcher--floating.shapetranslate-switcher--at-middle-right .shapetranslate-switcher__link,
+.shapetranslate-switcher--floating.shapetranslate-switcher--at-middle-right .shapetranslate-switcher__unavailable {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	padding-right: 0.7rem;
+}
+
+.shapetranslate-switcher--floating.shapetranslate-switcher--at-middle-left .shapetranslate-switcher__link,
+.shapetranslate-switcher--floating.shapetranslate-switcher--at-middle-left .shapetranslate-switcher__unavailable {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	padding-left: 0.7rem;
+}
+
+/* End 4. Vertical placements */
+
+/* ------------------------------------------------------------------------
+ * 5. Flags, unavailable items and dropdown
+ * ------------------------------------------------------------------------ */
+
+/*
+ * Flags are square-cropped to a circle here and nowhere else. In a menu or a
+ * post a flag sits beside body text at its own proportions; in the strip it is
+ * a marker read before the label is, and a row of circles scans as a column in
+ * a way a row of differently shaped rectangles does not.
+ */
+
+.shapetranslate-switcher--floating .shapetranslate-switcher__flag {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 50%;
+	object-fit: cover;
+	box-shadow: inset 0 0 0 1px rgba( 0, 0, 0, 0.12 );
+}
+
+/* An unreachable language is shown without pretending to be a button. */
+
+.shapetranslate-switcher--floating .shapetranslate-switcher__unavailable {
+	box-shadow: none;
+	font-weight: 500;
+}
+
+/*
+ * A dropdown is still offered, for a site that wants the strip collapsed to one
+ * control. Its panel is drawn by the shared stylesheet and positioned by the
+ * shared script, so only the summary needs the pill treatment above.
+ */
+
+.shapetranslate-switcher--floating .shapetranslate-switcher__dropdown[open] > .shapetranslate-switcher__list {
+	padding: 0.4rem;
+	border: 0;
+	border-radius: 12px;
+	background: var( --shapetranslate-floating-bg );
+	box-shadow: 0 8px 28px rgba( 0, 0, 0, 0.18 );
+}
+
+/* End 5. Flags, unavailable items and dropdown */
+
+/* ------------------------------------------------------------------------
+ * 6. Media queries
+ *
+ * Grouped here, at the end of the file, so every responsive and preference
+ * override for this stylesheet is read in one place.
+ * ------------------------------------------------------------------------ */
+
+/* Narrow viewports. */
+
+@media screen and ( max-width: 782px ) {
+	.admin-bar .shapetranslate-switcher--floating.shapetranslate-switcher--at-top-right,
+	.admin-bar .shapetranslate-switcher--floating.shapetranslate-switcher--at-top-left {
+		top: calc( 1rem + 46px );
+	}
+}
+
+/*
+ * A phone has no room for a strip beside the content it is pinned over, so the
+ * labels go and the flags carry it alone. A site running the switcher without
+ * flags keeps its labels rather than being left with empty pills, which is what
+ * `:has()` is asking: drop the label only where something else identifies the
+ * language. Browsers without `:has()` keep the full labels, which is the same
+ * strip, only wider.
+ */
+
+@media screen and ( max-width: 600px ) {
+	.shapetranslate-switcher--floating {
+		/*
+		 * A box that scrolls on one axis scrolls on both: `overflow-y` below
+		 * makes `overflow-x` compute to `auto` too, and a pill stepping sideways
+		 * inside it would reach past the content box and raise a scrollbar
+		 * across the strip. There is also nothing to step away from here, since
+		 * a finger does not hover; a tap that leaves `:hover` stuck behind it
+		 * would leave one pill displaced instead.
+		 */
+		--shapetranslate-floating-shift: 0px;
+
+		font-size: 0.8125rem;
+		max-height: 70vh;
+		overflow-y: auto;
+		overscroll-behavior: contain;
+	}
+
+	.shapetranslate-switcher--floating .shapetranslate-switcher__link:has( .shapetranslate-switcher__flag ) .shapetranslate-switcher__label,
+	.shapetranslate-switcher--floating .shapetranslate-switcher__unavailable:has( .shapetranslate-switcher__flag ) .shapetranslate-switcher__label {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+		padding: 0;
+		overflow: hidden;
+		border: 0;
+		clip: rect( 0 0 0 0 );
+		clip-path: inset( 50% );
+		white-space: nowrap;
+	}
+
+	.shapetranslate-switcher--floating .shapetranslate-switcher__link:has( .shapetranslate-switcher__flag ),
+	.shapetranslate-switcher--floating .shapetranslate-switcher__unavailable:has( .shapetranslate-switcher__flag ) {
+		padding: 0.4rem;
+	}
+}
+
+/*
+ * `overflow-y` above would clip an open dropdown panel, which is drawn outside
+ * the strip. A dropdown is one control tall and needs no scrolling of its own.
+ */
+
+@media screen and ( max-width: 600px ) {
+	.shapetranslate-switcher--floating.shapetranslate-switcher--dropdown {
+		overflow: visible;
+		max-height: none;
+	}
+}
+
+/* Colour scheme. */
+
+@media ( prefers-color-scheme: dark ) {
+	.shapetranslate-switcher--floating {
+		--shapetranslate-floating-bg: #2a2a2e;
+		--shapetranslate-floating-text: #f2f2f4;
+		--shapetranslate-floating-current-bg: #f2f2f4;
+		--shapetranslate-floating-current-text: #101012;
+	}
+}
+
+/* Reduced motion. */
+
+@media ( prefers-reduced-motion: reduce ) {
+	.shapetranslate-switcher--floating .shapetranslate-switcher__link,
+	.shapetranslate-switcher--floating .shapetranslate-switcher__dropdown > summary {
+		transition: none;
+	}
+
+	.shapetranslate-switcher--floating .shapetranslate-switcher__link:hover,
+	.shapetranslate-switcher--floating .shapetranslate-switcher__dropdown > summary:hover {
+		transform: none;
+	}
+}
+
+/* Print. */
+
+@media print {
+	.shapetranslate-switcher--floating {
+		display: none;
+	}
+}
+
+/* End 6. Media queries */

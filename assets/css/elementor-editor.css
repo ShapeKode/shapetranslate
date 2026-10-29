@@ -1,0 +1,27 @@
+/**
+ * ShapeTranslate styles for the Elementor editor.
+ *
+ * Loaded only inside the editor, never on the front end, because the only
+ * thing it describes is the placeholder the widget draws while it has nothing
+ * to show. A visitor is never shown that markup, so a visitor never downloads
+ * the rule for it.
+ *
+ * Table of contents
+ *
+ *  1. Widget placeholder
+ */
+
+/* ------------------------------------------------------------------------
+ * 1. Widget placeholder
+ * ------------------------------------------------------------------------ */
+
+.shapetranslate-elementor-placeholder {
+	padding: 1em;
+	border: 1px dashed currentColor;
+	border-radius: 4px;
+	opacity: 0.7;
+	font-size: 13px;
+	text-align: center;
+}
+
+/* End 1. Widget placeholder */

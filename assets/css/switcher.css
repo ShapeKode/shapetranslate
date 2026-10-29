@@ -1,0 +1,311 @@
+/**
+ * ShapeTranslate language switcher, every placement but the floating one.
+ *
+ * The switcher sits inside a theme's own markup, so this file sets only what
+ * it has to and inherits the rest. Everything is scoped to the
+ * `shapetranslate-switcher` block, which no other plugin renders.
+ *
+ * Table of contents
+ *
+ *  1. Switcher shell and list
+ *  2. Links, labels and focus
+ *  3. Item states
+ *  4. Flags
+ *  5. Dropdown
+ *  6. Screen reader text and menu integration
+ *  7. Media queries
+ */
+
+/* ------------------------------------------------------------------------
+ * 1. Switcher shell and list
+ * ------------------------------------------------------------------------ */
+
+.shapetranslate-switcher {
+	--shapetranslate-switcher-gap: 0.75rem;
+	display: block;
+}
+
+/*
+ * Header menus routinely set a tall line-height on their top-level items so a
+ * single link fills the bar. That value inherits into every switcher row and
+ * makes the list many times taller than its text, so the switcher restores a
+ * normal line-height for the markup it owns.
+ */
+
+.shapetranslate-switcher,
+.shapetranslate-switcher__list,
+.shapetranslate-switcher__item,
+.shapetranslate-switcher__link,
+.shapetranslate-switcher__unavailable,
+.shapetranslate-switcher__label,
+.shapetranslate-switcher__dropdown,
+.shapetranslate-switcher__dropdown > summary {
+	line-height: normal;
+}
+
+.shapetranslate-switcher__list {
+	display: flex;
+	gap: var(--shapetranslate-switcher-gap);
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.shapetranslate-switcher--vertical .shapetranslate-switcher__list,
+.shapetranslate-switcher--dropdown .shapetranslate-switcher__list {
+	align-items: stretch;
+	flex-direction: column;
+}
+
+/* End 1. Switcher shell and list */
+
+/* ------------------------------------------------------------------------
+ * 2. Links, labels and focus
+ * ------------------------------------------------------------------------ */
+
+.shapetranslate-switcher__link,
+.shapetranslate-switcher__unavailable,
+.shapetranslate-switcher__dropdown > summary {
+	display: inline-flex;
+	gap: 0.4em;
+	align-items: center;
+}
+
+/*
+ * A switcher is a set of controls, not prose, so the underline a theme puts on
+ * every link reads as a defect here — and doubly so beside a flag, where it
+ * runs under the image as well as the label.
+ *
+ * The selector is built up to three classes and an element deliberately. A
+ * theme's underline lives on a content-scoped rule rather than on a bare `a` —
+ * Astra's is `.ast-single-post .entry-content a`, two classes and an element —
+ * and a switcher dropped into a post sits inside exactly that scope. Matching
+ * that shape and going one class further is what decides it; anything shorter
+ * loses on specificity and leaves the underline on screen.
+ *
+ * It stops short of `!important`, which would also beat the Decoration field in
+ * the Elementor widget's own typography controls. A theme that still wins from
+ * here is answered with a rule, not with an escalation nobody can undo.
+ *
+ * Removing it costs nothing in affordance. Each language is a discrete control
+ * that names itself, the current one carries `aria-current`, and the focus ring
+ * below is untouched, so a keyboard still shows exactly where it is.
+ */
+
+.shapetranslate-switcher .shapetranslate-switcher__list a.shapetranslate-switcher__link,
+.shapetranslate-switcher .shapetranslate-switcher__list a.shapetranslate-switcher__link:hover,
+.shapetranslate-switcher .shapetranslate-switcher__list a.shapetranslate-switcher__link:focus,
+.shapetranslate-switcher .shapetranslate-switcher__list a.shapetranslate-switcher__link:visited,
+.shapetranslate-switcher .shapetranslate-switcher__dropdown > summary {
+	text-decoration: none;
+}
+
+.shapetranslate-switcher__link:focus-visible,
+.shapetranslate-switcher__dropdown > summary:focus-visible {
+	outline: 2px solid currentColor;
+	outline-offset: 3px;
+}
+
+/* End 2. Links, labels and focus */
+
+/* ------------------------------------------------------------------------
+ * 3. Item states
+ * ------------------------------------------------------------------------ */
+
+.shapetranslate-switcher__item.is-unavailable {
+	opacity: 0.62;
+}
+
+/* A language that falls back to its home page is a real choice, not a dead one. */
+
+.shapetranslate-switcher__item.has-fallback {
+	opacity: 1;
+}
+
+/*
+ * Announced to assistive technology, never printed beside a language label.
+ * A flag-only switcher hides its language names the same way.
+ */
+
+.shapetranslate-switcher__status,
+.shapetranslate-switcher__label--hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	border: 0;
+	clip: rect( 0 0 0 0 );
+	clip-path: inset( 50% );
+	white-space: nowrap;
+}
+
+/* End 3. Item states */
+
+/* ------------------------------------------------------------------------
+ * 4. Flags
+ * ------------------------------------------------------------------------ */
+
+.shapetranslate-switcher__flag {
+	width: 1.25em;
+	height: auto;
+	flex: 0 0 auto;
+}
+
+/* End 4. Flags */
+
+/* ------------------------------------------------------------------------
+ * 5. Dropdown
+ * ------------------------------------------------------------------------ */
+
+.shapetranslate-switcher__dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.shapetranslate-switcher__dropdown > summary {
+	cursor: pointer;
+	list-style: none;
+}
+
+/*
+ * A summary only keeps its native disclosure marker while it stays a list item,
+ * and the flag and label need a flex row, so the switcher draws its own chevron.
+ * A rotated border avoids a glyph that a screen reader could announce.
+ */
+
+.shapetranslate-switcher__dropdown > summary::-webkit-details-marker {
+	display: none;
+}
+
+.shapetranslate-switcher__dropdown > summary::after {
+	content: "";
+	flex: 0 0 auto;
+	width: 0.4em;
+	height: 0.4em;
+	border-right: 2px solid currentColor;
+	border-bottom: 2px solid currentColor;
+	transform: translateY(-0.15em) rotate(45deg);
+	transition: transform 0.15s ease;
+}
+
+.shapetranslate-switcher__dropdown[open] > summary::after {
+	transform: translateY(0.1em) rotate(-135deg);
+}
+
+/*
+ * Out of flow in every direction, so opening one never changes the height of
+ * the footer, the sidebar, or whatever else holds it, and never moves a single
+ * thing around it. The panel is positioned against the switcher itself, which
+ * is the element carrying `position: relative`.
+ */
+
+.shapetranslate-switcher__dropdown[open] > .shapetranslate-switcher__list {
+	position: absolute;
+	z-index: 20;
+	top: calc(100% + 0.35rem);
+	inset-inline-start: 0;
+	min-width: max-content;
+	padding: 0.65rem;
+	border: 1px solid currentColor;
+	background: Canvas;
+	color: CanvasText;
+	/*
+	 * Opacity and transform only: both are composited, so the panel fades in
+	 * without the browser laying the page out again. An animation rather than a
+	 * transition, because there is no state to transition from — `details` hides
+	 * the panel outright until it opens.
+	 */
+	animation: shapetranslate-switcher-open 0.14s ease-out;
+}
+
+@keyframes shapetranslate-switcher-open {
+	from {
+		opacity: 0;
+		transform: translateY(var(--shapetranslate-switcher-slide, -0.25rem));
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/*
+ * Both set by assets/js/switcher.js, which measures the room around the
+ * switcher when the panel opens. Where that script does not run neither
+ * attribute is ever written and the rule above stands on its own, so the panel
+ * opens downward from the inline start as it always has.
+ */
+
+.shapetranslate-switcher__dropdown[data-shapetranslate-drop="up"][open] > .shapetranslate-switcher__list {
+	top: auto;
+	bottom: calc(100% + 0.35rem);
+	/* Slides down out of the summary instead of up out of it. */
+	--shapetranslate-switcher-slide: 0.25rem;
+}
+
+.shapetranslate-switcher__dropdown[data-shapetranslate-align="end"][open] > .shapetranslate-switcher__list {
+	inset-inline-start: auto;
+	inset-inline-end: 0;
+}
+
+/* End 5. Dropdown */
+
+/* ------------------------------------------------------------------------
+ * 6. Screen reader text and menu integration
+ * ------------------------------------------------------------------------ */
+
+.shapetranslate-switcher .screen-reader-text {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+/*
+ * A language entry generated for a navigation menu is rendered by the theme's
+ * own walker, inside the theme's own anchor, so it carries its flag and its
+ * label in one element of its own. That element is the row: it holds the two
+ * together whatever the anchor around it does with its children, and presents
+ * them to the anchor as the single word the rest of the menu is made of.
+ */
+
+.shapetranslate-switcher__content {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4em;
+	vertical-align: middle;
+}
+
+/* End 6. Screen reader text and menu integration */
+
+/* ------------------------------------------------------------------------
+ * 7. Media queries
+ *
+ * Grouped here, at the end of the file, so every responsive and preference
+ * override for this stylesheet is read in one place.
+ * ------------------------------------------------------------------------ */
+
+/* Reduced motion. */
+
+@media (prefers-reduced-motion: reduce) {
+	.shapetranslate-switcher__dropdown > summary::after {
+		transition: none;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.shapetranslate-switcher__dropdown[open] > .shapetranslate-switcher__list {
+		animation: none;
+	}
+}
+
+/* End 7. Media queries */

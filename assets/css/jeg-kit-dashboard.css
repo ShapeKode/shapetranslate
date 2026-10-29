@@ -1,0 +1,26 @@
+/**
+ * ShapeTranslate styles for the Jeg Kit theme builder dashboard.
+ *
+ * Loaded only on the builder's own dashboard screen, for the one element
+ * ShapeTranslate writes into its template table: a chip naming the language each
+ * template was written in. The selector is prefixed with `shapetranslate` and
+ * qualified by the builder's row, so nothing here can reach the rest of the
+ * application's markup — the chip inherits its size from the name it sits
+ * beside and states everything else for itself.
+ */
+
+.sortable-items .item .shapetranslate-jkit-language {
+	display: inline-block;
+	box-sizing: border-box;
+	margin-inline-start: 8px;
+	padding: 1px 8px;
+	border: 1px solid #e3e3e8;
+	border-radius: 999px;
+	background: #f6f6f8;
+	color: #5c5c66;
+	font-size: 11px;
+	font-weight: 500;
+	line-height: 1.7;
+	white-space: nowrap;
+	vertical-align: middle;
+}

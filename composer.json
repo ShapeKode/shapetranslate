@@ -1,0 +1,19 @@
+{
+    "name": "shapekode/shapetranslate",
+    "description": "ShapeTranslate WordPress plugin",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "ShapeKode",
+            "homepage": "https://shapekode.com/"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "appsero/client": "^2.0"
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}

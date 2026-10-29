@@ -1,0 +1,40 @@
+# Claude / AI tooling
+.claude/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Dependencies
+/vendor/
+node_modules/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# Coverage / test output
+coverage/
+.phpunit.result.cache
+
+# Build / generated files
+dist/
+build/
+
+# Temporary files
+tmp/
+temp/
+
+# Local WordPress / development files
+wp-content/uploads/

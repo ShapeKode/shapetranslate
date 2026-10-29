@@ -1,0 +1,2264 @@
+# Copyright (C) 2026 ShapeKode
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: ShapeTranslate 1.0.0\n"
+"Report-Msgid-Bugs-To: https://shapekode.com/\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-09-16T12:07:04+02:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: shapetranslate\n"
+
+#. Plugin Name of the plugin
+#: shapetranslate.php
+#: src/Admin/class-adminmodule.php:130
+#: src/Integrations/Elementor/class-elementorwidgetmodule.php:56
+#: src/Switcher/class-navigationmenuintegration.php:83
+msgid "ShapeTranslate"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: shapetranslate.php
+msgid "https://shapekode.com/"
+msgstr ""
+
+#. Description of the plugin
+#: shapetranslate.php
+msgid "A lightweight multilingual foundation for WordPress."
+msgstr ""
+
+#. Author of the plugin
+#: shapetranslate.php
+msgid "ShapeKode"
+msgstr ""
+
+#. Author URI of the plugin
+#: shapetranslate.php
+msgid "https://profiles.wordpress.org/shapekode22/"
+msgstr ""
+
+#: includes/api.php:549
+msgid "The taxonomy for these terms could not be determined."
+msgstr ""
+
+#: includes/api.php:828
+msgid "Provide at least one object keyed by language."
+msgstr ""
+
+#: includes/api.php:857
+msgid "ShapeTranslate is not available yet. Call this on init or later."
+msgstr ""
+
+#: includes/api.php:871
+msgid "That language is not registered in ShapeTranslate."
+msgstr ""
+
+#: includes/functions.php:27
+msgid "Register ShapeTranslate strings on init or later."
+msgstr ""
+
+#. translators: 1: required PHP version, 2: current PHP version.
+#: shapetranslate.php:37
+#, php-format
+msgid "ShapeTranslate requires PHP %1$s or newer. This site is running PHP %2$s."
+msgstr ""
+
+#. translators: 1: required WordPress version, 2: current WordPress version.
+#: shapetranslate.php:93
+#, php-format
+msgid "ShapeTranslate requires WordPress %1$s or newer. This site is running WordPress %2$s."
+msgstr ""
+
+#: src/Admin/class-adminlanguagefiltermodule.php:171
+msgid "Show all languages"
+msgstr ""
+
+#: src/Admin/class-adminlanguagefiltermodule.php:178
+msgid "Filters content by language"
+msgstr ""
+
+#: src/Admin/class-adminmodule.php:129
+msgid "ShapeTranslate Languages"
+msgstr ""
+
+#: src/Admin/class-adminmodule.php:256
+#: src/Admin/class-languagespage.php:62
+msgid "You are not allowed to manage ShapeTranslate languages."
+msgstr ""
+
+#: src/Admin/class-contenttranslationmodule.php:130
+#: src/Admin/class-languagespage.php:113
+#: src/Admin/class-languagespage.php:164
+#: src/Admin/class-mediatranslationfields.php:94
+#: src/Admin/class-settingspage.php:748
+#: src/Admin/class-setupwizardpage.php:136
+#: src/Admin/class-termtranslationfields.php:83
+#: src/Admin/class-termtranslationfields.php:109
+#: src/Admin/class-termtranslationlisttable.php:97
+#: src/Admin/class-translationlisttable.php:132
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:257
+msgid "Language"
+msgstr ""
+
+#: src/Admin/class-contenttranslationmodule.php:205
+msgid "You are not allowed to create this translation."
+msgstr ""
+
+#: src/Admin/class-contenttranslationmodule.php:245
+msgid "Translated draft created and linked."
+msgstr ""
+
+#: src/Admin/class-contenttranslationmodule.php:262
+msgid "ShapeTranslate could not complete the translation action."
+msgstr ""
+
+#: src/Admin/class-contenttranslationmodule.php:314
+#: src/Content/class-posttranslationmanager.php:881
+msgid "The requested post could not be found."
+msgstr ""
+
+#: src/Admin/class-contenttranslationmodule.php:315
+#: src/Content/class-posttranslationmanager.php:887
+msgid "That post type is not supported by ShapeTranslate."
+msgstr ""
+
+#: src/Admin/class-contenttranslationmodule.php:316
+#: src/Admin/class-termtranslationmodule.php:477
+#: src/Content/class-posttranslationmanager.php:920
+#: src/Taxonomy/class-termtranslationmanager.php:992
+msgid "Select a registered language."
+msgstr ""
+
+#: src/Admin/class-contenttranslationmodule.php:317
+#: src/Admin/class-termtranslationmodule.php:478
+#: src/Content/class-posttranslationmanager.php:924
+#: src/StringTranslation/class-stringmanager.php:230
+#: src/Taxonomy/class-termtranslationmanager.php:996
+msgid "Select an enabled language."
+msgstr ""
+
+#: src/Admin/class-contenttranslationmodule.php:318
+msgid "A translation for that language already exists."
+msgstr ""
+
+#: src/Admin/class-contenttranslationmodule.php:319
+msgid "This post is already assigned to a different language."
+msgstr ""
+
+#: src/Admin/class-contenttranslationmodule.php:320
+msgid "Posts from different translation groups cannot be linked."
+msgstr ""
+
+#: src/Admin/class-contenttranslationmodule.php:321
+#: src/Content/class-posttranslationmanager.php:314
+msgid "Translations in one group must use the same post type."
+msgstr ""
+
+#: src/Admin/class-contenttranslationmodule.php:322
+msgid "Assign a language to the source post first."
+msgstr ""
+
+#: src/Admin/class-contenttranslationmodule.php:323
+#: src/Content/class-posttranslationmanager.php:676
+msgid "Configure an enabled default language before translating content."
+msgstr ""
+
+#: src/Admin/class-contenttranslationmodule.php:324
+#: src/Content/class-posttranslationmanager.php:449
+msgid "A trashed post cannot be used as a translation source."
+msgstr ""
+
+#: src/Admin/class-contenttranslationmodule.php:325
+#: src/Content/class-posttranslationmanager.php:1048
+msgid "ShapeTranslate could not save the translation relationship."
+msgstr ""
+
+#: src/Admin/class-languagespage.php:103
+#: src/Admin/class-setupwizardpage.php:130
+#: src/Admin/class-setupwizardpage.php:359
+#: src/Admin/class-setupwizardpage.php:402
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:135
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:188
+msgid "Languages"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:105
+#: src/Admin/class-languagespage.php:295
+#: src/Admin/class-languagespage.php:416
+msgid "Add Language"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:114
+#: src/Admin/class-languagespage.php:197
+#: src/Admin/class-languagespage.php:341
+#: src/Admin/class-setupwizardpage.php:137
+msgid "Locale"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:115
+#: src/Admin/class-languagespage.php:200
+msgid "Code"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:116
+#: src/Admin/class-languagespage.php:203
+#: src/Admin/class-languagespage.php:355
+#: src/Admin/class-setupwizardpage.php:138
+msgid "URL slug"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:117
+#: src/Admin/class-languagespage.php:206
+msgid "Direction"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:118
+#: src/Admin/class-languagespage.php:209
+#: src/Admin/class-languagespage.php:384
+msgid "Status"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:119
+#: src/Admin/class-languagespage.php:239
+msgid "Order"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:125
+msgid "No languages have been added yet."
+msgstr ""
+
+#: src/Admin/class-languagespage.php:149
+#: src/Admin/class-languagespage.php:400
+msgid "Enabled"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:149
+msgid "Disabled"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:150
+msgid "RTL"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:150
+msgid "LTR"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:151
+msgid "Disable"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:151
+msgid "Enable"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:152
+msgid "Delete this language? This does not delete site content."
+msgstr ""
+
+#: src/Admin/class-languagespage.php:172
+#: src/Admin/class-translationdashboardlisttable.php:342
+msgid "Edit"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:188
+msgid "Delete"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:194
+msgid "Show more details"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:214
+#: src/Admin/class-setupwizardpage.php:139
+msgid "Default"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:233
+msgid "Make default"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:272
+#: src/Admin/class-languagespage.php:676
+#: src/Language/class-languagemanager.php:177
+#: src/Language/class-languagemanager.php:228
+#: src/Language/class-languagemanager.php:290
+#: src/Language/class-languagemanager.php:320
+#: src/Language/class-languagemanager.php:355
+msgid "The requested language could not be found."
+msgstr ""
+
+#: src/Admin/class-languagespage.php:295
+msgid "Edit Language"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:299
+#: src/Admin/class-setupwizardmodule.php:80
+#: src/Admin/class-setupwizardpage.php:75
+msgid "Set Up ShapeTranslate"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:327
+#: src/Switcher/class-languageswitcherwidget.php:187
+msgid "Name"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:329
+msgid "The administrative display name, for example French."
+msgstr ""
+
+#: src/Admin/class-languagespage.php:334
+#: src/Admin/class-settingspage.php:397
+#: src/Admin/class-setupwizardpage.php:327
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:168
+#: src/Switcher/class-languageswitcherwidget.php:186
+#: src/Switcher/class-navigationmenuintegration.php:152
+#: blocks/language-switcher/index.js:31
+#: blocks/navigation-language-switcher/index.js:81
+msgid "Native name"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:336
+msgid "The language name as written by native speakers, for example Français."
+msgstr ""
+
+#: src/Admin/class-languagespage.php:343
+msgid "A WordPress locale such as en_US, fr_FR, or de_DE_formal."
+msgstr ""
+
+#: src/Admin/class-languagespage.php:348
+#: src/Admin/class-settingspage.php:399
+#: src/Admin/class-setupwizardpage.php:327
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:170
+#: src/Switcher/class-languageswitcherwidget.php:188
+#: src/Switcher/class-navigationmenuintegration.php:154
+#: blocks/language-switcher/index.js:33
+#: blocks/navigation-language-switcher/index.js:83
+msgid "Language code"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:350
+msgid "A two- or three-letter ISO 639 language code, such as en or fra."
+msgstr ""
+
+#: src/Admin/class-languagespage.php:357
+msgid "The unique path segment reserved for this language, such as en or french."
+msgstr ""
+
+#: src/Admin/class-languagespage.php:362
+msgid "Domain"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:364
+msgid "Only used when URL behavior is set to a separate domain per language, such as example.fr. Leave empty to serve this language from the site domain. The domain must already point at this WordPress installation."
+msgstr ""
+
+#: src/Admin/class-languagespage.php:368
+msgid "Text direction"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:379
+msgid "Right-to-left (RTL)"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:403
+msgid "The default language must remain enabled."
+msgstr ""
+
+#: src/Admin/class-languagespage.php:412
+msgid "Update Language"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:414
+msgid "Save and Continue"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:423
+msgid "Cancel"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:444
+msgid "Choose a language"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:447
+#: src/Admin/class-setupwizardpage.php:105
+#: src/Admin/class-setupwizardpage.php:193
+msgid "Search languages"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:447
+#: src/Admin/class-setupwizardpage.php:105
+#: src/Admin/class-setupwizardpage.php:193
+msgid "No languages found."
+msgstr ""
+
+#: src/Admin/class-languagespage.php:449
+#: src/Admin/class-mediatranslationfields.php:159
+#: src/Admin/class-setupwizardpage.php:195
+#: src/Admin/class-termtranslationfields.php:156
+#: src/Admin/class-translationmetabox.php:103
+msgid "Select a language"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:478
+msgid "Selecting a preset fills the editable language fields below."
+msgstr ""
+
+#: src/Admin/class-languagespage.php:593
+msgid "Move up"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:593
+msgid "Move down"
+msgstr ""
+
+#: src/Admin/class-languagespage.php:651
+#: src/Admin/class-setupwizardpage.php:436
+msgid "ShapeTranslate setup is complete."
+msgstr ""
+
+#: src/Admin/class-languagespage.php:652
+msgid "Language added."
+msgstr ""
+
+#: src/Admin/class-languagespage.php:653
+msgid "Language updated."
+msgstr ""
+
+#: src/Admin/class-languagespage.php:654
+msgid "Language deleted."
+msgstr ""
+
+#: src/Admin/class-languagespage.php:655
+msgid "Default language updated."
+msgstr ""
+
+#: src/Admin/class-languagespage.php:656
+msgid "Language status updated."
+msgstr ""
+
+#: src/Admin/class-languagespage.php:657
+msgid "Language order updated."
+msgstr ""
+
+#: src/Admin/class-languagespage.php:668
+#: src/Language/class-languagevalidator.php:42
+msgid "Language name is required."
+msgstr ""
+
+#: src/Admin/class-languagespage.php:669
+#: src/Language/class-languagevalidator.php:46
+msgid "Native name is required."
+msgstr ""
+
+#: src/Admin/class-languagespage.php:670
+#: src/Language/class-languagevalidator.php:50
+msgid "Language names must be 100 characters or fewer."
+msgstr ""
+
+#: src/Admin/class-languagespage.php:671
+#: src/Language/class-languagevalidator.php:56
+msgid "Enter a valid WordPress locale, such as en_US or pt_BR."
+msgstr ""
+
+#: src/Admin/class-languagespage.php:672
+#: src/Language/class-languagevalidator.php:63
+msgid "Language code must contain two or three lowercase letters."
+msgstr ""
+
+#: src/Admin/class-languagespage.php:673
+#: src/Language/class-languagevalidator.php:70
+msgid "URL slug is required and must be 80 characters or fewer."
+msgstr ""
+
+#: src/Admin/class-languagespage.php:674
+#: src/Language/class-languagevalidator.php:99
+msgid "That locale is already registered."
+msgstr ""
+
+#: src/Admin/class-languagespage.php:675
+#: src/Language/class-languagevalidator.php:103
+msgid "That URL slug is already in use."
+msgstr ""
+
+#: src/Admin/class-languagespage.php:677
+#: src/Language/class-languagemanager.php:296
+msgid "Enable a language before making it the default."
+msgstr ""
+
+#: src/Admin/class-languagespage.php:678
+#: src/Language/class-languagemanager.php:193
+#: src/Language/class-languagemanager.php:324
+msgid "The default language cannot be disabled."
+msgstr ""
+
+#: src/Admin/class-languagespage.php:679
+#: src/Language/class-languagemanager.php:351
+msgid "Invalid language ordering direction."
+msgstr ""
+
+#: src/Admin/class-languagespage.php:680
+msgid "Language data is invalid."
+msgstr ""
+
+#: src/Admin/class-languagespage.php:681
+#: src/Content/class-translationlifecyclemodule.php:155
+#: src/Language/class-languagemanager.php:257
+msgid "This language is assigned to content and cannot be deleted."
+msgstr ""
+
+#: src/Admin/class-mediatranslationfields.php:97
+msgid "Language this media item is described in. The file itself is shared."
+msgstr ""
+
+#: src/Admin/class-settingsmodule.php:153
+#: src/Admin/class-settingspage.php:131
+msgid "ShapeTranslate Settings"
+msgstr ""
+
+#: src/Admin/class-settingsmodule.php:154
+#: src/Admin/class-setupwizardpage.php:359
+msgid "Settings"
+msgstr ""
+
+#: src/Admin/class-settingsmodule.php:203
+msgid "The requested settings section is invalid."
+msgstr ""
+
+#: src/Admin/class-settingsmodule.php:221
+msgid "ShapeTranslate could not encode the settings export."
+msgstr ""
+
+#: src/Admin/class-settingsmodule.php:280
+msgid "Choose at least one enabled language and make an enabled language the default."
+msgstr ""
+
+#: src/Admin/class-settingsmodule.php:367
+msgid "A selected post type or taxonomy is not available."
+msgstr ""
+
+#: src/Admin/class-settingsmodule.php:431
+msgid "A chosen default term is not available."
+msgstr ""
+
+#: src/Admin/class-settingsmodule.php:435
+msgid "A default term must belong to the language it is chosen for."
+msgstr ""
+
+#: src/Admin/class-settingsmodule.php:601
+msgid "The settings file upload failed."
+msgstr ""
+
+#: src/Admin/class-settingsmodule.php:609
+msgid "Choose a JSON settings file no larger than 1 MB."
+msgstr ""
+
+#: src/Admin/class-settingsmodule.php:613
+msgid "WordPress could not verify the uploaded settings file."
+msgstr ""
+
+#: src/Admin/class-settingsmodule.php:620
+msgid "WordPress could not read the uploaded settings file."
+msgstr ""
+
+#: src/Admin/class-settingsmodule.php:638
+#: src/Admin/class-settingspage.php:125
+msgid "You are not allowed to manage ShapeTranslate settings."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:140
+msgid "Save Changes"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:168
+#: src/Admin/class-settingspage.php:826
+msgid "General"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:171
+msgid "Add a language before configuring ShapeTranslate."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:172
+msgid "Run setup"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:177
+#: src/Admin/class-setupwizardpage.php:104
+#: src/Admin/class-setupwizardpage.php:277
+msgid "Default language"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:186
+msgid "Unassigned content and unprefixed requests use this language."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:190
+#: src/Admin/class-settingspage.php:193
+msgid "Enabled languages"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:201
+msgid "Disabling a language hides its routes and switcher entry but does not delete its translations."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:205
+msgid "Manage language details and ordering"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:215
+#: src/Admin/class-settingspage.php:827
+msgid "URL"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:216
+msgid "Changing URL behavior changes public canonical URLs."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:216
+msgid "Update navigation links and clear page or CDN caches after saving."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:218
+msgid "Language directories require pretty permalinks. Choose a permalink structure in WordPress, or select the query argument format below, which works without one."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:222
+msgid "Language URL behavior"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:229
+msgid "Language directories (/en/)"
+msgstr ""
+
+#. translators: %s: the site's base domain.
+#: src/Admin/class-settingspage.php:234
+#, php-format
+msgid "A subdomain per language (en.%s)"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:239
+msgid "A separate domain per language (example.fr)"
+msgstr ""
+
+#. translators: %s: the language query argument, such as ?lang=en.
+#: src/Admin/class-settingspage.php:244
+#, php-format
+msgid "A query argument (%s)"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:250
+msgid "Subdomains are built from each language URL slug. Separate domains are set on each language in Languages, and every host must already point at this WordPress installation with its own certificate."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:252
+msgid "A page served from a language host also loads its images, scripts, and search results from that host, so nothing is blocked as a cross-origin request. Logging in and the admin stay on the site address, which is where the session lives."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:254
+msgid "While every language is prefixed, the site address itself serves no language and forwards to the default one. Point each language host at this server before saving."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:257
+msgid "The query argument leaves every address exactly as WordPress builds it and names the language beside it, so it is the one format that also works without pretty permalinks. Directories read better and are the better choice when the site has them."
+msgstr ""
+
+#. translators: %s: comma-separated language names.
+#: src/Admin/class-settingspage.php:273
+#, php-format
+msgid "Served from the site domain until a domain is set: %s"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:283
+msgid "Default language prefix"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:285
+msgid "Prefix every language, including the default"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:286
+msgid "Hide the prefix for the default language"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:287
+msgid "The prefix is whichever form the behavior above uses: the directory, the subdomain, or the query argument. Hiding it serves the default language from the site address itself."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:291
+msgid "Visitor language"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:295
+msgid "Send a first-time visitor to the language their browser asks for"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:297
+msgid "Applies only to the site home page when no language is in the URL. A shared or bookmarked language URL always wins, and following an internal link home never changes the language. While this is on, a cookie holding only the language slug remembers the choice so the browser header is read once."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:302
+msgid "The home page is the one address detection makes reader-dependent, so ShapeTranslate marks it uncacheable and declares what it varies on. Page cache plugins read that; no other page is affected."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:302
+msgid "A CDN or a server-level cache sits above WordPress and sees neither, so exclude the home page there, or let it vary on the Accept-Language header."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:313
+#: src/Admin/class-settingspage.php:828
+#: src/Admin/class-translationdashboardlisttable.php:173
+msgid "Content"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:314
+msgid "Only the types selected here gain a language control and translation actions. Posts, pages, categories, and tags start selected; every other public post type and taxonomy stays untouched until you choose it."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:317
+msgid "Translatable post types"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:321
+msgid "Translatable taxonomies"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:325
+msgid "Default terms"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:328
+msgid "A post saved without a term of its own lands in the default chosen here for its language. Leave a language on the translation of the site default to follow the term set in Settings > Writing, which is what a translated Uncategorized already gives you."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:334
+msgid "Media"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:338
+msgid "Translate media titles, alternative text, captions, and descriptions"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:341
+msgid "Each language gets its own media record pointing at the same file. Nothing is uploaded again and no file is duplicated. Leave this off if every language should share one description."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:354
+#: src/Admin/class-settingspage.php:829
+msgid "Synchronization"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:356
+msgid "Creating a translation always copies the source content, taxonomies, public custom fields, page template, featured image, and the other core post fields, so an editor never starts from an empty screen. Nothing below is needed for that."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:359
+msgid "Choose what should also stay aligned afterwards. Editing a synchronized item on any post in a translation group applies the change to every other language in that group."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:363
+msgid "Keep synchronized"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:379
+msgid "Synchronized items are shared by every language, so only editors who may edit all translations in a group can change them."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:393
+#: src/Admin/class-settingspage.php:830
+#: src/Admin/class-setupwizardpage.php:402
+msgid "Switcher"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:395
+#: src/Admin/class-setupwizardpage.php:327
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:164
+msgid "Label"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:398
+#: src/Admin/class-setupwizardpage.php:327
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:169
+#: src/Switcher/class-navigationmenuintegration.php:153
+#: blocks/language-switcher/index.js:32
+#: blocks/navigation-language-switcher/index.js:82
+msgid "Language name"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:402
+#: src/Admin/class-settingspage.php:493
+#: src/Admin/class-setupwizardpage.php:328
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:143
+#: src/Switcher/class-navigationmenuintegration.php:160
+#: blocks/language-switcher/index.js:40
+msgid "Layout"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:404
+#: src/Admin/class-settingspage.php:496
+#: src/Admin/class-setupwizardpage.php:328
+#: src/Switcher/class-languageswitcherwidget.php:197
+#: src/Switcher/class-navigationmenuintegration.php:163
+#: blocks/language-switcher/index.js:43
+msgid "Horizontal list"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:405
+#: src/Admin/class-settingspage.php:495
+#: src/Admin/class-setupwizardpage.php:328
+#: src/Switcher/class-languageswitcherwidget.php:198
+#: src/Switcher/class-navigationmenuintegration.php:164
+#: blocks/language-switcher/index.js:44
+msgid "Vertical list"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:406
+#: src/Admin/class-settingspage.php:497
+#: src/Admin/class-setupwizardpage.php:328
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:149
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:442
+#: src/Switcher/class-languageswitcherwidget.php:199
+#: src/Switcher/class-navigationmenuintegration.php:162
+#: blocks/language-switcher/index.js:45
+msgid "Dropdown"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:409
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:211
+#: blocks/language-switcher/index.js:67
+msgid "Missing translation"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:411
+#: src/Admin/class-settingspage.php:419
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:215
+#: src/Switcher/class-languageswitcherwidget.php:208
+#: src/Switcher/class-navigationmenuintegration.php:172
+#: src/Switcher/class-navigationmenuintegration.php:180
+#: blocks/language-switcher/index.js:59
+#: blocks/language-switcher/index.js:74
+#: blocks/navigation-language-switcher/index.js:108
+#: blocks/navigation-language-switcher/index.js:122
+msgid "Hide languages the site has no content in"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:412
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:216
+#: src/Switcher/class-languageswitcherwidget.php:209
+#: blocks/language-switcher/index.js:75
+msgid "Show as unavailable"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:413
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:217
+#: src/Switcher/class-languageswitcherwidget.php:210
+#: blocks/language-switcher/index.js:76
+msgid "Link to language homepage"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:414
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:218
+#: src/Switcher/class-languageswitcherwidget.php:211
+#: src/Switcher/class-navigationmenuintegration.php:175
+#: blocks/language-switcher/index.js:77
+msgid "Keep current URL"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:417
+msgid "Visibility"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:418
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:201
+#: src/Switcher/class-languageswitcherwidget.php:215
+#: src/Switcher/class-navigationmenuintegration.php:179
+#: blocks/language-switcher/index.js:52
+msgid "Hide current language"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:420
+#: src/Switcher/class-languageswitcherwidget.php:217
+#: src/Switcher/class-navigationmenuintegration.php:182
+#: blocks/language-switcher/index.js:91
+msgid "Show disabled languages as unavailable"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:421
+#: src/Admin/class-settingspage.php:473
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:178
+#: src/Switcher/class-languageswitcherwidget.php:216
+#: src/Switcher/class-navigationmenuintegration.php:181
+#: blocks/language-switcher/index.js:84
+#: blocks/navigation-language-switcher/index.js:129
+msgid "Show flags"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:424
+msgid "A language stays in the switcher as long as something on the site is published in it, even on pages that carry no translation of their own, such as a cart or a checkout. Only a language nothing has been written in yet is hidden."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:427
+msgid "The “Hide languages the site has no content in” checkbox is the same choice as the Missing translation option of that name, and it wins: leave it off to use any of the other three."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:436
+msgid "Navigation Menus"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:438
+msgid "Theme Locations"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:456
+msgid "Middle right"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:457
+msgid "Middle left"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:458
+msgid "Bottom right"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:459
+msgid "Bottom left"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:460
+msgid "Top right"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:461
+msgid "Top left"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:464
+msgid "Floating switcher"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:466
+#: src/Switcher/class-navigationmenuintegration.php:150
+#: blocks/language-switcher/index.js:28
+#: blocks/navigation-language-switcher/index.js:78
+msgid "Display"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:469
+msgid "Show a floating switcher on the site"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:477
+msgid "Fixed to the edge of the screen on every page, over the content rather than inside it. On by default, so a new language is reachable before you have placed a switcher yourself; turn it off once one sits in your menu or template."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:480
+msgid "Flags here are separate from the Show flags checkbox above, which covers every other switcher."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:483
+msgid "Position"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:490
+msgid "A middle edge sits halfway down the side of the screen, flush against it. A corner keeps a margin instead, for a site whose sides are already taken. Right stays right in a right-to-left language."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:500
+msgid "A list shows every language at once, the current one filled in. A dropdown collapses it to one control, which suits a site with many languages. Labels and missing-translation handling still come from the settings above."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:542
+msgid "Placing a switcher yourself"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:544
+msgid "The settings above apply to every switcher on the site. To give one placement its own settings instead, pass them along with it. The shortcode below stays in step with the controls above, so changing a control shows the option that carries it."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:547
+msgid "Shortcode, for a post, a page, or a widget"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:554
+msgid "Copied"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:555
+msgid "Copy"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:565
+#: src/Admin/class-settingspage.php:831
+msgid "SEO"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:567
+msgid "Alternate language URLs"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:569
+msgid "Output hreflang links for available translations"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:570
+msgid "Include x-default using the default language URL"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:571
+msgid "Canonical URL integration remains active when hreflang output is disabled."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:574
+msgid "Sitemap"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:576
+msgid "List one sitemap per language in the sitemap index"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:577
+msgid "Each language gets a sitemap at its own address, under one shared index. Turn this off to keep a single sitemap holding every language. Languages on separate hosts always have their own sitemap."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:586
+#: src/Admin/class-settingspage.php:832
+msgid "Advanced"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:588
+msgid "Uninstall behavior"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:589
+msgid "Enabling this option will permanently delete ShapeTranslate data when the plugin is uninstalled. Continue?"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:589
+msgid "Delete all ShapeTranslate data when the plugin is uninstalled"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:590
+msgid "Deactivation never deletes data. This option applies only to uninstalling the plugin."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:607
+msgid "All eligible types"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:608
+msgid "Only selected types"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:633
+msgid "Per-language defaults appear once a language exists and a taxonomy that applies a default term is translatable."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:639
+msgid "Taxonomy"
+msgstr ""
+
+#. translators: 1: taxonomy label, 2: language native name.
+#: src/Admin/class-settingspage.php:661
+#, php-format
+msgid "%1$s default for %2$s"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:666
+msgid "Translation of the site default"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:718
+msgid "Settings Export"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:719
+msgid "The export includes language locales and portable plugin settings. Navigation menu IDs are excluded."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:723
+msgid "Download Settings JSON"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:726
+msgid "Settings Import"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:727
+msgid "Import replaces portable settings and enabled-language choices. Every imported locale must already be registered on this site."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:732
+msgid "JSON file"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:733
+msgid "Or paste JSON"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:735
+msgid "Import Settings"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:735
+msgid "Import these settings and replace the current portable configuration?"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:748
+msgid "Menu"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:752
+msgid "No navigation menus exist for this site."
+msgstr ""
+
+#. translators: %s: navigation menu name.
+#: src/Admin/class-settingspage.php:758
+#, php-format
+msgid "Language for %s"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:762
+#: src/Admin/class-termtranslationlisttable.php:251
+#: src/Admin/class-translationlisttable.php:289
+msgid "Not assigned"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:784
+msgid "Theme location"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:792
+msgid "The active theme has no registered menu locations."
+msgstr ""
+
+#. translators: 1: theme location label, 2: language native name.
+#: src/Admin/class-settingspage.php:804
+#, php-format
+msgid "%1$s menu for %2$s"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:809
+msgid "Use WordPress default"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:835
+msgid "ShapeTranslate settings sections"
+msgstr ""
+
+#: src/Admin/class-settingspage.php:860
+msgid "ShapeTranslate settings saved."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:861
+msgid "URL behavior changed. Review public links and clear page or CDN caches."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:862
+msgid "ShapeTranslate settings imported."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:863
+msgid "Settings imported and URL behavior changed. Review public links and clear caches."
+msgstr ""
+
+#: src/Admin/class-settingspage.php:870
+msgid "ShapeTranslate could not save these settings."
+msgstr ""
+
+#: src/Admin/class-setupwizardmodule.php:81
+msgid "Setup Wizard"
+msgstr ""
+
+#: src/Admin/class-setupwizardmodule.php:105
+#: src/Admin/class-setupwizardmodule.php:133
+#: src/Admin/class-setupwizardpage.php:69
+msgid "You are not allowed to set up ShapeTranslate."
+msgstr ""
+
+#: src/Admin/class-setupwizardmodule.php:163
+msgid "Choose a registered site language."
+msgstr ""
+
+#: src/Admin/class-setupwizardmodule.php:258
+msgid "That language is already added."
+msgstr ""
+
+#: src/Admin/class-setupwizardmodule.php:375
+msgid "The selected navigation menu is not available."
+msgstr ""
+
+#: src/Admin/class-setupwizardmodule.php:394
+#: src/Switcher/class-navigationmenuintegration.php:105
+#: src/Switcher/class-navigationmenuintegration.php:110
+msgid "Language switcher"
+msgstr ""
+
+#: src/Admin/class-setupwizardmodule.php:454
+msgid "Choose a language from the ShapeTranslate catalog."
+msgstr ""
+
+#: src/Admin/class-setupwizardmodule.php:458
+msgid "That language is already registered."
+msgstr ""
+
+#: src/Admin/class-setupwizardpage.php:100
+#: src/Admin/class-setupwizardpage.php:402
+msgid "Site Language"
+msgstr ""
+
+#: src/Admin/class-setupwizardpage.php:101
+msgid "Choose the language used by your existing content."
+msgstr ""
+
+#: src/Admin/class-setupwizardpage.php:119
+#: src/Admin/class-setupwizardpage.php:205
+#: src/Admin/class-setupwizardpage.php:315
+#: src/Admin/class-setupwizardpage.php:335
+msgid "Continue"
+msgstr ""
+
+#: src/Admin/class-setupwizardpage.php:131
+msgid "Add every language this site will be translated into, and mark the one your existing content is written in. More can be added later from the Languages screen."
+msgstr ""
+
+#: src/Admin/class-setupwizardpage.php:140
+msgid "Actions"
+msgstr ""
+
+#. translators: %s: language name.
+#: src/Admin/class-setupwizardpage.php:148
+#, php-format
+msgid "Make %s the default language"
+msgstr ""
+
+#. translators: %s: language name.
+#: src/Admin/class-setupwizardpage.php:153
+#, php-format
+msgid "Remove %s? Content already assigned to it keeps its language until the content itself is deleted."
+msgstr ""
+
+#: src/Admin/class-setupwizardpage.php:184
+msgid "Remove"
+msgstr ""
+
+#: src/Admin/class-setupwizardpage.php:192
+msgid "Add a language"
+msgstr ""
+
+#: src/Admin/class-setupwizardpage.php:203
+msgid "Add language"
+msgstr ""
+
+#: src/Admin/class-setupwizardpage.php:244
+msgid "Language URLs"
+msgstr ""
+
+#: src/Admin/class-setupwizardpage.php:245
+msgid "This choice sets public URLs and canonical links. Changing it later may require link and cache updates."
+msgstr ""
+
+#: src/Admin/class-setupwizardpage.php:249
+msgid "URL format"
+msgstr ""
+
+#: src/Admin/class-setupwizardpage.php:254
+msgid "The language is set from the directory name"
+msgstr ""
+
+#: src/Admin/class-setupwizardpage.php:259
+msgid "The language is set from a subdomain"
+msgstr ""
+
+#: src/Admin/class-setupwizardpage.php:264
+msgid "The language is set from a separate domain"
+msgstr ""
+
+#: src/Admin/class-setupwizardpage.php:269
+msgid "The language is set from a query argument"
+msgstr ""
+
+#: src/Admin/class-setupwizardpage.php:273
+msgid "Subdomains and separate domains must already point at this WordPress installation, each with its own certificate. The query argument is the only format that works on a site without pretty permalinks."
+msgstr ""
+
+#: src/Admin/class-setupwizardpage.php:281
+msgid "Hide the language for the default language"
+msgstr ""
+
+#: src/Admin/class-setupwizardpage.php:286
+msgid "Show the language for every language"
+msgstr ""
+
+#: src/Admin/class-setupwizardpage.php:292
+msgid "Domains"
+msgstr ""
+
+#: src/Admin/class-setupwizardpage.php:311
+msgid "A language left empty is served from the site domain. Domains are saved whichever format is selected, so they can be filled in before the switch."
+msgstr ""
+
+#: src/Admin/class-setupwizardpage.php:324
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:56
+#: src/Switcher/class-languageswitcherwidget.php:50
+msgid "Language Switcher"
+msgstr ""
+
+#: src/Admin/class-setupwizardpage.php:329
+msgid "Add to menu"
+msgstr ""
+
+#: src/Admin/class-setupwizardpage.php:329
+msgid "Do not add to a menu"
+msgstr ""
+
+#: src/Admin/class-setupwizardpage.php:333
+msgid "The switcher can also be added later with the block, shortcode, or Appearance > Menus."
+msgstr ""
+
+#: src/Admin/class-setupwizardpage.php:343
+msgid "Ready to Translate"
+msgstr ""
+
+#. translators: %d: number of enabled languages.
+#: src/Admin/class-setupwizardpage.php:349
+#, php-format
+msgid "%d language is enabled."
+msgid_plural "%d languages are enabled."
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Admin/class-setupwizardpage.php:356
+msgid "A single placement can override these settings by passing them along with it. Settings > Switcher writes that snippet for you."
+msgstr ""
+
+#: src/Admin/class-setupwizardpage.php:358
+msgid "Finish Setup"
+msgstr ""
+
+#: src/Admin/class-setupwizardpage.php:359
+#: src/Admin/class-stringtranslationlisttable.php:144
+#: src/Admin/class-termtranslationfields.php:117
+#: src/Admin/class-termtranslationlisttable.php:128
+#: src/Admin/class-translationdashboardmodule.php:74
+#: src/Admin/class-translationdashboardmodule.php:151
+#: src/Admin/class-translationlisttable.php:163
+#: src/Admin/class-translationmetabox.php:117
+msgid "Translations"
+msgstr ""
+
+#: src/Admin/class-setupwizardpage.php:390
+msgid "Back"
+msgstr ""
+
+#: src/Admin/class-setupwizardpage.php:402
+msgid "URL Format"
+msgstr ""
+
+#: src/Admin/class-setupwizardpage.php:402
+msgid "Finish"
+msgstr ""
+
+#: src/Admin/class-setupwizardpage.php:434
+msgid "ShapeTranslate could not save this setup step."
+msgstr ""
+
+#: src/Admin/class-stringtranslationlisttable.php:145
+msgid "Translation"
+msgstr ""
+
+#: src/Admin/class-stringtranslationlisttable.php:148
+msgid "Registered string"
+msgstr ""
+
+#: src/Admin/class-stringtranslationlisttable.php:149
+msgid "Original string"
+msgstr ""
+
+#: src/Admin/class-stringtranslationlisttable.php:248
+msgid "No enabled language"
+msgstr ""
+
+#. translators: 1: native language name, 2: original string.
+#: src/Admin/class-stringtranslationlisttable.php:283
+#, php-format
+msgid "%1$s translation for %2$s"
+msgstr ""
+
+#: src/Admin/class-stringtranslationlisttable.php:385
+msgid "No registered strings matched the current filters."
+msgstr ""
+
+#: src/Admin/class-stringtranslationmodule.php:72
+msgid "ShapeTranslate String Translation"
+msgstr ""
+
+#: src/Admin/class-stringtranslationmodule.php:73
+#: src/Admin/class-stringtranslationmodule.php:155
+msgid "String Translation"
+msgstr ""
+
+#: src/Admin/class-stringtranslationmodule.php:93
+msgid "Strings per page"
+msgstr ""
+
+#: src/Admin/class-stringtranslationmodule.php:160
+msgid "Enable at least one language before translating registered strings."
+msgstr ""
+
+#: src/Admin/class-stringtranslationmodule.php:174
+msgid "Save translations"
+msgstr ""
+
+#: src/Admin/class-stringtranslationmodule.php:241
+msgid "Filter by string group"
+msgstr ""
+
+#: src/Admin/class-stringtranslationmodule.php:243
+msgid "All string groups"
+msgstr ""
+
+#: src/Admin/class-stringtranslationmodule.php:255
+msgid "Select translation language"
+msgstr ""
+
+#: src/Admin/class-stringtranslationmodule.php:259
+msgid "No enabled languages"
+msgstr ""
+
+#: src/Admin/class-stringtranslationmodule.php:265
+#: src/Admin/class-translationdashboardlisttable.php:536
+msgid "All languages"
+msgstr ""
+
+#: src/Admin/class-stringtranslationmodule.php:279
+#: src/Admin/class-translationdashboardlisttable.php:561
+msgid "Filter"
+msgstr ""
+
+#: src/Admin/class-stringtranslationmodule.php:280
+msgid "Search strings"
+msgstr ""
+
+#: src/Admin/class-stringtranslationmodule.php:357
+msgid "String translations saved."
+msgstr ""
+
+#: src/Admin/class-stringtranslationmodule.php:359
+msgid "The string translations could not be saved."
+msgstr ""
+
+#: src/Admin/class-stringtranslationmodule.php:374
+msgid "You are not allowed to manage string translations."
+msgstr ""
+
+#: src/Admin/class-termtranslationfields.php:85
+#: src/Admin/class-termtranslationfields.php:113
+msgid "Language assigned to this term."
+msgstr ""
+
+#: src/Admin/class-termtranslationfields.php:181
+msgid "Update the term to assign its language before adding translations."
+msgstr ""
+
+#. translators: %s: native language name.
+#: src/Admin/class-termtranslationfields.php:211
+#: src/Admin/class-termtranslationlisttable.php:362
+#: src/Admin/class-translationdashboardlisttable.php:486
+#: src/Admin/class-translationlisttable.php:398
+#: src/Admin/class-translationmetabox.php:148
+#, php-format
+msgid "Add %s translation"
+msgstr ""
+
+#: src/Admin/class-termtranslationfields.php:222
+#: src/Admin/class-termtranslationfields.php:224
+#: src/Admin/class-translationmetabox.php:159
+#: src/Admin/class-translationmetabox.php:161
+msgid "Current language"
+msgstr ""
+
+#: src/Admin/class-termtranslationfields.php:234
+#: src/Admin/class-termtranslationfields.php:236
+#: src/Admin/class-translationmetabox.php:171
+#: src/Admin/class-translationmetabox.php:173
+msgid "Unavailable"
+msgstr ""
+
+#. translators: %s: language name.
+#: src/Admin/class-termtranslationfields.php:258
+#: src/Admin/class-termtranslationlisttable.php:336
+#: src/Admin/class-translationlisttable.php:370
+#: src/Admin/class-translationmetabox.php:197
+#, php-format
+msgid "Edit %s translation"
+msgstr ""
+
+#: src/Admin/class-termtranslationfields.php:272
+#: src/Admin/class-translationmetabox.php:211
+msgid "Translation exists"
+msgstr ""
+
+#: src/Admin/class-termtranslationlisttable.php:285
+#: src/Admin/class-translationlisttable.php:322
+msgid "Assign language first"
+msgstr ""
+
+#. translators: %s: native language name.
+#: src/Admin/class-termtranslationlisttable.php:326
+#: src/Admin/class-translationlisttable.php:360
+#, php-format
+msgid "%s translation"
+msgstr ""
+
+#: src/Admin/class-termtranslationmodule.php:255
+msgid "You are not allowed to create this term translation."
+msgstr ""
+
+#: src/Admin/class-termtranslationmodule.php:293
+msgid "Translated term created and linked."
+msgstr ""
+
+#: src/Admin/class-termtranslationmodule.php:304
+msgid "ShapeTranslate could not complete the term translation action."
+msgstr ""
+
+#: src/Admin/class-termtranslationmodule.php:475
+#: src/Taxonomy/class-termtranslationmanager.php:975
+msgid "The requested term could not be found."
+msgstr ""
+
+#: src/Admin/class-termtranslationmodule.php:476
+#: src/Taxonomy/class-termtranslationmanager.php:968
+msgid "That taxonomy is not supported by ShapeTranslate."
+msgstr ""
+
+#: src/Admin/class-termtranslationmodule.php:479
+msgid "A term translation for that language already exists."
+msgstr ""
+
+#: src/Admin/class-termtranslationmodule.php:480
+msgid "This term is already assigned to a different language."
+msgstr ""
+
+#: src/Admin/class-termtranslationmodule.php:481
+msgid "Terms from different translation groups cannot be linked."
+msgstr ""
+
+#: src/Admin/class-termtranslationmodule.php:482
+msgid "Assign a language to the source term first."
+msgstr ""
+
+#: src/Admin/class-termtranslationmodule.php:483
+#: src/Taxonomy/class-termtranslationmanager.php:824
+msgid "Configure an enabled default language before translating terms."
+msgstr ""
+
+#: src/Admin/class-termtranslationmodule.php:484
+#: src/Taxonomy/class-termtranslationmanager.php:1212
+msgid "ShapeTranslate could not save the term translation relationship."
+msgstr ""
+
+#: src/Admin/class-termtranslationmodule.php:485
+msgid "A term with that generated name already exists. Rename it or create the translation manually."
+msgstr ""
+
+#. translators: 1: native language name, 2: language code.
+#: src/Admin/class-translationdashboardlisttable.php:179
+#, php-format
+msgctxt "translation dashboard language heading"
+msgid "%1$s (%2$s)"
+msgstr ""
+
+#. translators: %s: source content title.
+#: src/Admin/class-translationdashboardlisttable.php:302
+#, php-format
+msgid "Select %s"
+msgstr ""
+
+#: src/Admin/class-translationdashboardlisttable.php:303
+#: src/Admin/class-translationdashboardlisttable.php:326
+msgid "(no title)"
+msgstr ""
+
+#: src/Admin/class-translationdashboardlisttable.php:323
+msgid "Content unavailable"
+msgstr ""
+
+#: src/Admin/class-translationdashboardlisttable.php:350
+msgid "View"
+msgstr ""
+
+#: src/Admin/class-translationdashboardlisttable.php:403
+#: src/Switcher/class-languageswitcher.php:544
+msgid "Translation unavailable"
+msgstr ""
+
+#. translators: %s: native language name.
+#: src/Admin/class-translationdashboardlisttable.php:443
+#, php-format
+msgid "%s translation is complete"
+msgstr ""
+
+#. translators: 1: native language name, 2: post status.
+#: src/Admin/class-translationdashboardlisttable.php:448
+#, php-format
+msgid "%1$s translation: %2$s"
+msgstr ""
+
+#: src/Admin/class-translationdashboardlisttable.php:513
+msgid "All translation statuses"
+msgstr ""
+
+#: src/Admin/class-translationdashboardlisttable.php:514
+msgid "Missing translations"
+msgstr ""
+
+#: src/Admin/class-translationdashboardlisttable.php:515
+msgid "Completed translations"
+msgstr ""
+
+#: src/Admin/class-translationdashboardlisttable.php:516
+msgid "Draft translations"
+msgstr ""
+
+#: src/Admin/class-translationdashboardlisttable.php:520
+msgid "Filter by content type"
+msgstr ""
+
+#: src/Admin/class-translationdashboardlisttable.php:522
+msgid "All content types"
+msgstr ""
+
+#: src/Admin/class-translationdashboardlisttable.php:534
+msgid "Filter by translation language"
+msgstr ""
+
+#: src/Admin/class-translationdashboardlisttable.php:548
+msgid "Filter by translation status"
+msgstr ""
+
+#: src/Admin/class-translationdashboardlisttable.php:571
+msgid "No content matched the current translation filters."
+msgstr ""
+
+#: src/Admin/class-translationdashboardmodule.php:73
+msgid "ShapeTranslate Translations"
+msgstr ""
+
+#: src/Admin/class-translationdashboardmodule.php:94
+msgid "Content per page"
+msgstr ""
+
+#: src/Admin/class-translationdashboardmodule.php:144
+msgid "You are not allowed to access this page."
+msgstr ""
+
+#: src/Admin/class-translationdashboardmodule.php:155
+msgid "The active translation storage does not provide dashboard reporting."
+msgstr ""
+
+#: src/Admin/class-translationdashboardmodule.php:180
+msgid "Search content"
+msgstr ""
+
+#: src/Admin/class-translationmetabox.php:99
+msgid "Post language"
+msgstr ""
+
+#: src/Admin/class-translationmetabox.php:120
+msgid "Save the post to assign its language before adding translations."
+msgstr ""
+
+#: src/Admin/class-translationmetabox.php:190
+msgid "In Trash"
+msgstr ""
+
+#: src/Content/class-posttranslationmanager.php:244
+#: src/Content/class-posttranslationmanager.php:377
+#: src/Content/class-posttranslationmanager.php:476
+msgid "This translation group already contains a post for that language."
+msgstr ""
+
+#: src/Content/class-posttranslationmanager.php:290
+msgid "Provide at least one post to link."
+msgstr ""
+
+#: src/Content/class-posttranslationmanager.php:296
+msgid "A post cannot represent more than one language in a translation group."
+msgstr ""
+
+#: src/Content/class-posttranslationmanager.php:326
+msgid "A post is already assigned to a different language."
+msgstr ""
+
+#: src/Content/class-posttranslationmanager.php:346
+msgid "Posts from different translation groups cannot be linked implicitly."
+msgstr ""
+
+#: src/Content/class-posttranslationmanager.php:363
+msgid "The source post must belong to the new translation group."
+msgstr ""
+
+#: src/Content/class-posttranslationmanager.php:569
+msgid "The translated item could not be created."
+msgstr ""
+
+#: src/Content/class-posttranslationmanager.php:902
+msgid "Save the post before giving it a language."
+msgstr ""
+
+#: src/Integrations/Elementor/class-elementorcompatibility.php:95
+msgid "The Elementor translation source and target must be different existing posts."
+msgstr ""
+
+#: src/Integrations/Elementor/class-elementorcompatibility.php:102
+msgid "Elementor document data cannot be copied between different post types."
+msgstr ""
+
+#: src/Integrations/Elementor/class-elementorcompatibility.php:109
+msgid "The translated post already contains Elementor document data."
+msgstr ""
+
+#: src/Integrations/Elementor/class-elementorcompatibility.php:118
+msgid "The source Elementor document data is invalid and was not copied."
+msgstr ""
+
+#: src/Integrations/Elementor/class-elementorcompatibility.php:156
+msgid "Filtered Elementor document data is invalid and was not copied."
+msgstr ""
+
+#: src/Integrations/Elementor/class-elementorcompatibility.php:177
+msgid "Elementor document metadata could not be copied to the translated post."
+msgstr ""
+
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:147
+msgid "Horizontal"
+msgstr ""
+
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:148
+msgid "Vertical"
+msgstr ""
+
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:194
+msgid "Leave empty to show every enabled language. A language added to the site later appears on its own while this is empty, and has to be added here once a selection is made."
+msgstr ""
+
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:220
+msgid "A language stays in the switcher as long as something on the site is published in it, even on a page carrying no translation of its own."
+msgstr ""
+
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:227
+msgid "Show disabled languages"
+msgstr ""
+
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:237
+#: src/Switcher/class-navigationmenuintegration.php:185
+#: blocks/language-switcher/index.js:98
+msgid "Accessible label"
+msgstr ""
+
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:240
+#: src/Switcher/class-languageswitcher.php:160
+msgid "Language selector"
+msgstr ""
+
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:241
+msgid "Announced to screen readers in place of the default."
+msgstr ""
+
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:274
+msgid "Normal"
+msgstr ""
+
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:280
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:299
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:318
+msgid "Text Color"
+msgstr ""
+
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:293
+msgid "Hover"
+msgstr ""
+
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:312
+msgid "Current"
+msgstr ""
+
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:337
+msgid "Unavailable Color"
+msgstr ""
+
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:358
+msgid "Flag"
+msgstr ""
+
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:367
+msgid "Size"
+msgstr ""
+
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:390
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:516
+msgid "Spacing"
+msgstr ""
+
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:415
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:475
+msgid "Border Radius"
+msgstr ""
+
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:458
+msgid "Background"
+msgstr ""
+
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:495
+msgid "Padding"
+msgstr ""
+
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:529
+msgid "Gap Between Languages"
+msgstr ""
+
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:552
+msgid "Language Padding"
+msgstr ""
+
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:566
+msgid "Alignment"
+msgstr ""
+
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:570
+msgid "Left"
+msgstr ""
+
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:574
+msgid "Center"
+msgstr ""
+
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:578
+msgid "Right"
+msgstr ""
+
+#: src/Integrations/Elementor/class-languageswitcherwidget.php:717
+msgid "No language can be shown here yet. Register a second language, or widen the Missing translation setting."
+msgstr ""
+
+#: src/Language/class-languagemanager.php:234
+msgid "The default language cannot be removed. Make another language the default first."
+msgstr ""
+
+#: src/Language/class-languagemanager.php:418
+msgid "Language data must be an array."
+msgstr ""
+
+#: src/Language/class-languagevalidator.php:82
+msgid "Enter a valid domain, such as example.fr."
+msgstr ""
+
+#: src/Language/class-languagevalidator.php:112
+msgid "That domain is already in use."
+msgstr ""
+
+#: src/Lifecycle/class-activator.php:37
+msgid "ShapeTranslate could not be activated because the PHP requirement is not met."
+msgstr ""
+
+#: src/Lifecycle/class-activator.php:38
+#: src/Lifecycle/class-activator.php:46
+msgid "Plugin activation failed"
+msgstr ""
+
+#: src/Lifecycle/class-activator.php:45
+msgid "ShapeTranslate could not be activated because the WordPress requirement is not met."
+msgstr ""
+
+#: src/Media/class-mediatranslationmanager.php:67
+msgid "Only attachments can be translated as media."
+msgstr ""
+
+#: src/Media/class-mediatranslationmanager.php:85
+msgid "The media translation could not be created."
+msgstr ""
+
+#: src/Navigation/class-menulanguagemanager.php:82
+msgid "The selected navigation menu could not be found."
+msgstr ""
+
+#: src/Navigation/class-menulanguagemanager.php:92
+msgid "The selected menu language is not registered."
+msgstr ""
+
+#: src/Navigation/class-menulanguagemanager.php:206
+msgid "A selected menu language is not registered."
+msgstr ""
+
+#: src/Navigation/class-menulanguagemanager.php:233
+msgid "A selected navigation menu could not be found."
+msgstr ""
+
+#: src/Navigation/class-menulanguagemanager.php:243
+msgid "A menu cannot be assigned to a location for a different language."
+msgstr ""
+
+#: src/Navigation/class-menulanguagemanager.php:251
+msgid "The same menu cannot be assigned to more than one language."
+msgstr ""
+
+#: src/Navigation/class-navigationmodule.php:225
+msgid "This language is assigned to a navigation menu and cannot be deleted."
+msgstr ""
+
+#: src/Settings/class-settingstransfer.php:153
+msgid "Choose a settings file or paste JSON to import."
+msgstr ""
+
+#: src/Settings/class-settingstransfer.php:157
+msgid "The settings file is larger than 1 MB."
+msgstr ""
+
+#: src/Settings/class-settingstransfer.php:163
+msgid "The settings file does not contain valid JSON."
+msgstr ""
+
+#: src/Settings/class-settingstransfer.php:187
+msgid "A settings import filter returned invalid data."
+msgstr ""
+
+#: src/Settings/class-settingstransfer.php:196
+msgid "A settings import filter removed required data."
+msgstr ""
+
+#: src/Settings/class-settingstransfer.php:204
+msgid "A settings import filter returned data that failed validation."
+msgstr ""
+
+#: src/Settings/class-settingstransfer.php:243
+msgid "This is not a ShapeTranslate settings export."
+msgstr ""
+
+#: src/Settings/class-settingstransfer.php:247
+msgid "This settings schema version is not supported."
+msgstr ""
+
+#: src/Settings/class-settingstransfer.php:256
+msgid "The settings export is missing required sections."
+msgstr ""
+
+#: src/Settings/class-settingstransfer.php:296
+msgid "The imported language configuration is invalid."
+msgstr ""
+
+#: src/Settings/class-settingstransfer.php:311
+msgid "Register every language from the export before importing its settings."
+msgstr ""
+
+#: src/Settings/class-settingstransfer.php:325
+msgid "The imported default language must be registered and enabled."
+msgstr ""
+
+#: src/Settings/class-settingstransfer.php:346
+msgid "The imported plugin settings are incomplete."
+msgstr ""
+
+#: src/Settings/class-settingstransfer.php:361
+msgid "The imported URL settings are invalid or unsupported."
+msgstr ""
+
+#: src/Settings/class-settingstransfer.php:376
+#: src/Settings/class-settingstransfer.php:387
+#: src/Settings/class-settingstransfer.php:397
+msgid "The imported switcher settings are invalid."
+msgstr ""
+
+#: src/Settings/class-settingstransfer.php:402
+msgid "The imported SEO settings are invalid."
+msgstr ""
+
+#: src/Settings/class-settingstransfer.php:406
+msgid "The imported advanced settings are invalid."
+msgstr ""
+
+#: src/Settings/class-settingstransfer.php:432
+#: src/Settings/class-settingstransfer.php:437
+msgid "The imported content settings are invalid."
+msgstr ""
+
+#: src/Settings/class-settingstransfer.php:444
+msgid "The imported content settings contain invalid object names."
+msgstr ""
+
+#: src/Settings/class-settingstransfer.php:451
+msgid "A selected post type or taxonomy is not available on this site."
+msgstr ""
+
+#: src/Settings/class-settingstransfer.php:471
+#: src/Settings/class-settingstransfer.php:479
+msgid "The imported translation workflow settings are invalid."
+msgstr ""
+
+#: src/Settings/class-synccatalog.php:108
+msgid "Taxonomies"
+msgstr ""
+
+#: src/Settings/class-synccatalog.php:109
+msgid "Terms of translatable taxonomies are mapped to their translations; other taxonomies are shared as stored."
+msgstr ""
+
+#: src/Settings/class-synccatalog.php:112
+msgid "Custom fields"
+msgstr ""
+
+#: src/Settings/class-synccatalog.php:113
+msgid "Public custom fields only. Protected keys stay with their own post unless a filter adds them."
+msgstr ""
+
+#: src/Settings/class-synccatalog.php:115
+msgid "Comment status"
+msgstr ""
+
+#: src/Settings/class-synccatalog.php:116
+msgid "Ping status"
+msgstr ""
+
+#: src/Settings/class-synccatalog.php:117
+msgid "Sticky status"
+msgstr ""
+
+#: src/Settings/class-synccatalog.php:119
+msgid "Published date"
+msgstr ""
+
+#: src/Settings/class-synccatalog.php:120
+msgid "Also decides whether a new translation starts with the source date instead of the date it was created."
+msgstr ""
+
+#: src/Settings/class-synccatalog.php:122
+msgid "Post format"
+msgstr ""
+
+#: src/Settings/class-synccatalog.php:124
+msgid "Page parent"
+msgstr ""
+
+#: src/Settings/class-synccatalog.php:125
+msgid "Uses the parent’s translation when one exists, otherwise the source parent."
+msgstr ""
+
+#: src/Settings/class-synccatalog.php:127
+msgid "Page template"
+msgstr ""
+
+#: src/Settings/class-synccatalog.php:128
+msgid "Page order"
+msgstr ""
+
+#: src/Settings/class-synccatalog.php:130
+msgid "Featured image"
+msgstr ""
+
+#: src/Settings/class-synccatalog.php:131
+msgid "Translations reuse the source attachment; the file is never duplicated."
+msgstr ""
+
+#: src/StringTranslation/class-registeredstringvalidator.php:56
+msgid "The original string must be plain text."
+msgstr ""
+
+#: src/StringTranslation/class-registeredstringvalidator.php:62
+msgid "The original string cannot be empty."
+msgstr ""
+
+#: src/StringTranslation/class-registeredstringvalidator.php:66
+msgid "The original string is too long."
+msgstr ""
+
+#: src/StringTranslation/class-registeredstringvalidator.php:83
+msgid "String groups and keys must be plain text."
+msgstr ""
+
+#: src/StringTranslation/class-registeredstringvalidator.php:90
+msgid "A string group is required."
+msgstr ""
+
+#: src/StringTranslation/class-registeredstringvalidator.php:94
+msgid "A string key is required."
+msgstr ""
+
+#: src/StringTranslation/class-registeredstringvalidator.php:98
+msgid "The string group is too long."
+msgstr ""
+
+#: src/StringTranslation/class-registeredstringvalidator.php:102
+msgid "The string key is too long."
+msgstr ""
+
+#: src/StringTranslation/class-registeredstringvalidator.php:119
+msgid "A translation must be plain text."
+msgstr ""
+
+#: src/StringTranslation/class-registeredstringvalidator.php:125
+msgid "The translation is too long."
+msgstr ""
+
+#: src/StringTranslation/class-stringmanager.php:234
+msgid "No valid string translations were submitted."
+msgstr ""
+
+#. translators: %s: language label.
+#: src/Switcher/class-languageswitcher.php:561
+#, php-format
+msgid "%s (translation unavailable)"
+msgstr ""
+
+#: src/Switcher/class-languageswitcherwidget.php:53
+msgid "Links to this page in the other languages of the site."
+msgstr ""
+
+#: src/Switcher/class-languageswitcherwidget.php:179
+msgid "Title:"
+msgstr ""
+
+#: src/Switcher/class-languageswitcherwidget.php:183
+msgid "Show each language as:"
+msgstr ""
+
+#: src/Switcher/class-languageswitcherwidget.php:194
+msgid "Layout:"
+msgstr ""
+
+#: src/Switcher/class-languageswitcherwidget.php:205
+msgid "Missing translation:"
+msgstr ""
+
+#: src/Switcher/class-navigationmenuintegration.php:120
+msgid "Add to Menu"
+msgstr ""
+
+#: src/Switcher/class-navigationmenuintegration.php:170
+msgid "Unavailable translations"
+msgstr ""
+
+#: src/Switcher/class-navigationmenuintegration.php:173
+msgid "Show unavailable"
+msgstr ""
+
+#: src/Switcher/class-navigationmenuintegration.php:174
+msgid "Link to language home"
+msgstr ""
+
+#: src/Taxonomy/class-termtranslationlifecyclemodule.php:183
+msgid "This language is assigned to terms and cannot be deleted."
+msgstr ""
+
+#: src/Taxonomy/class-termtranslationmanager.php:262
+#: src/Taxonomy/class-termtranslationmanager.php:387
+#: src/Taxonomy/class-termtranslationmanager.php:553
+#: src/Taxonomy/class-termtranslationmanager.php:575
+#: src/Taxonomy/class-termtranslationmanager.php:703
+msgid "This translation group already contains a term for that language."
+msgstr ""
+
+#: src/Taxonomy/class-termtranslationmanager.php:311
+#: src/Taxonomy/class-termtranslationmanager.php:484
+msgid "Provide at least one term to link."
+msgstr ""
+
+#: src/Taxonomy/class-termtranslationmanager.php:317
+#: src/Taxonomy/class-termtranslationmanager.php:490
+msgid "A term cannot represent more than one language in a translation group."
+msgstr ""
+
+#: src/Taxonomy/class-termtranslationmanager.php:340
+#: src/Taxonomy/class-termtranslationmanager.php:522
+msgid "A term is already assigned to a different language."
+msgstr ""
+
+#: src/Taxonomy/class-termtranslationmanager.php:360
+msgid "Terms from different translation groups cannot be linked implicitly."
+msgstr ""
+
+#: src/Taxonomy/class-termtranslationmanager.php:376
+msgid "The source term must belong to the new translation group."
+msgstr ""
+
+#. translators: 1: source term name, 2: target language native name.
+#: src/Taxonomy/class-termtranslationmanager.php:709
+#, php-format
+msgctxt "generated translated term name"
+msgid "%1$s (%2$s)"
+msgstr ""
+
+#: blocks/language-switcher/index.js:26
+#: blocks/navigation-language-switcher/index.js:76
+msgid "Switcher settings"
+msgstr ""
+
+#: blocks/language-switcher/index.js:60
+msgid "The same choice as the Missing translation option of that name, and it wins. Leave it off to use any of the other three."
+msgstr ""
+
+#: blocks/language-switcher/index.js:71
+msgid "Turn off the checkbox above to choose one of these."
+msgstr ""
+
+#: blocks/language-switcher/index.js:72
+msgid "What a language does on a page it has no translation of."
+msgstr ""
+
+#: blocks/navigation-language-switcher/index.js:53
+msgid "Add languages in ShapeTranslate to preview the switcher."
+msgstr ""
+
+#: blocks/navigation-language-switcher/index.js:90
+msgid "Show as a submenu"
+msgstr ""
+
+#: blocks/navigation-language-switcher/index.js:91
+msgid "Places the current language in the menu and the other languages below it."
+msgstr ""
+
+#: blocks/navigation-language-switcher/index.js:101
+msgid "Hide the current language"
+msgstr ""
+
+#: blocks/navigation-language-switcher/index.js:115
+msgid "Without a translation"
+msgstr ""
+
+#: blocks/navigation-language-switcher/index.js:119
+msgid "Link to the home page"
+msgstr ""
+
+#: blocks/navigation-language-switcher/index.js:120
+msgid "Keep the current route"
+msgstr ""
+
+#: blocks/navigation-language-switcher/index.js:121
+msgid "Show without a link"
+msgstr ""
+
+#: blocks/navigation-language-switcher/index.js:136
+msgid "Include disabled languages"
+msgstr ""
+
+#: blocks/language-switcher/block.json
+#: blocks/navigation-language-switcher/block.json
+msgctxt "block title"
+msgid "Language Switcher"
+msgstr ""
+
+#: blocks/language-switcher/block.json
+msgctxt "block description"
+msgid "Display links to available ShapeTranslate languages."
+msgstr ""
+
+#: blocks/navigation-language-switcher/block.json
+msgctxt "block description"
+msgid "Add language links to a Navigation block."
+msgstr ""
