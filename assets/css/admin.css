@@ -24,6 +24,7 @@
  * 13. Setup wizard language list
  * 14. Settings: switcher usage snippet
  * 15. Media queries
+ * 16. Overview: Free vs Pro comparison
  */
 
 /* ------------------------------------------------------------------------
@@ -1224,3 +1225,86 @@ a.shapetranslate-dashboard-state:focus {
 }
 
 /* End 15. Media queries */
+
+/* ------------------------------------------------------------------------
+ * 16. Overview: Free vs Pro comparison
+ * ------------------------------------------------------------------------ */
+
+.shapetranslate-overview-intro {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	margin: 16px 0;
+	padding: 20px 24px;
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 8px;
+}
+
+.shapetranslate-overview-intro h2 {
+	margin: 0 0 4px;
+}
+
+.shapetranslate-overview-intro p {
+	margin: 0;
+	color: #646970;
+}
+
+.shapetranslate-overview .shapetranslate-overview-table {
+	border-radius: 8px;
+	border-collapse: separate;
+	border-spacing: 0;
+	overflow: hidden;
+}
+
+.shapetranslate-overview .shapetranslate-overview-table th,
+.shapetranslate-overview .shapetranslate-overview-table td {
+	padding: 16px;
+	vertical-align: middle;
+	border-bottom: 1px solid #f0f0f1;
+	font-weight: 400;
+}
+
+.shapetranslate-overview .shapetranslate-overview-table thead th {
+	background: #f6f7f7;
+	font-weight: 600;
+}
+
+.shapetranslate-overview .shapetranslate-overview-plan {
+	width: 140px;
+	text-align: center;
+	border-left: 1px solid #f0f0f1;
+}
+
+
+.shapetranslate-overview-mark svg {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.shapetranslate-overview-mark.is-yes circle {
+	fill: #4caf50;
+}
+
+.shapetranslate-overview-mark.is-no circle {
+	fill: #f44336;
+}
+
+.shapetranslate-overview-footer {
+	text-align: right;
+}
+
+@media screen and ( max-width: 782px ) {
+	.shapetranslate-overview .shapetranslate-overview-plan {
+		width: 64px;
+	}
+
+	.shapetranslate-overview .shapetranslate-overview-table th,
+	.shapetranslate-overview .shapetranslate-overview-table td {
+		padding: 12px 8px;
+	}
+}
+
+/* End 16. Overview */

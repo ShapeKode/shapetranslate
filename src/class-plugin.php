@@ -16,6 +16,7 @@ use ShapeTranslate\Admin\AdminNoticeGate;
 use ShapeTranslate\Admin\AdminTextDirectionModule;
 use ShapeTranslate\Admin\ContentTranslationModule;
 use ShapeTranslate\Admin\SetupWizardModule;
+use ShapeTranslate\Admin\OverviewModule;
 use ShapeTranslate\Admin\SettingsModule;
 use ShapeTranslate\Admin\StringTranslationModule;
 use ShapeTranslate\Admin\StringTranslationQuery;
@@ -676,6 +677,7 @@ final class Plugin {
 				$taxonomy_support,
 				$this->term_translation_manager
 			);
+			$modules[] = new OverviewModule();
 			$modules[] = new ContentTranslationModule( $this->post_translation_manager, $this->language_manager );
 			$modules[] = new TermTranslationModule( $this->term_translation_manager, $this->language_manager );
 			$modules[] = new MediaTranslationFields( $this->post_translation_manager, $this->language_manager );
