@@ -180,6 +180,7 @@ final class NavigationMenuIntegration {
 		<?php $this->render_checkbox( $field, $item_id, 'hide_current', $settings['hide_current'], __( 'Hide current language', 'shapetranslate' ) ); ?>
 		<?php $this->render_checkbox( $field, $item_id, 'hide_missing', $settings['hide_missing'], __( 'Hide languages the site has no content in', 'shapetranslate' ) ); ?>
 		<?php $this->render_checkbox( $field, $item_id, 'show_flags', $settings['show_flags'], __( 'Show flags', 'shapetranslate' ) ); ?>
+		<?php $this->render_checkbox( $field, $item_id, 'toggle_flag_only', $settings['toggle_flag_only'], __( 'Dropdown: show only the flag for the selected language', 'shapetranslate' ) ); ?>
 		<?php $this->render_checkbox( $field, $item_id, 'show_disabled', $settings['show_disabled'], __( 'Show disabled languages as unavailable', 'shapetranslate' ) ); ?>
 		<p class="description description-wide">
 			<label for="edit-menu-item-shapetranslate-label-<?php echo esc_attr( $item_id ); ?>">
@@ -225,7 +226,7 @@ final class NavigationMenuIntegration {
 			)
 			: array();
 
-		foreach ( array( 'hide_current', 'hide_missing', 'show_flags', 'show_disabled' ) as $boolean_key ) {
+		foreach ( array( 'hide_current', 'hide_missing', 'show_flags', 'toggle_flag_only', 'show_disabled' ) as $boolean_key ) {
 			$posted[ $boolean_key ] = isset( $posted[ $boolean_key ] );
 		}
 
@@ -313,8 +314,6 @@ final class NavigationMenuIntegration {
 				: 'alternate';
 		}
 
-		$atts['dir'] = LanguageTag::direction( $language );
-
 		if ( empty( $menu_item->shapetranslate_available ) && empty( $atts['href'] ) ) {
 			$atts['aria-disabled'] = 'true';
 		}
@@ -390,7 +389,7 @@ final class NavigationMenuIntegration {
 			$parent             = clone $item;
 			$parent->title      = $this->switcher->get_item_content(
 				null !== $current ? $current : $languages[0],
-				$settings
+				$this->switcher->get_toggle_args( $settings )
 			);
 			$parent->url        = '';
 			$parent->attr_title = '';
@@ -405,10 +404,13 @@ final class NavigationMenuIntegration {
 			 * never receives it. Themes hang their submenu arrow and their mobile
 			 * toggle off that class, so it has to be set by hand.
 			 */
-			$parent->classes = $this->item_classes(
-				$item,
-				array( 'shapetranslate-switcher-parent', 'menu-item-has-children' )
-			);
+			$parent_classes = array( 'shapetranslate-switcher-parent', 'menu-item-has-children' );
+
+			if ( ! empty( $settings['toggle_flag_only'] ) ) {
+				$parent_classes[] = 'shapetranslate-switcher-parent--flag-only';
+			}
+
+			$parent->classes = $this->item_classes( $item, $parent_classes );
 			$built[]         = $parent;
 			++$index;
 		}
@@ -521,7 +523,15 @@ final class NavigationMenuIntegration {
 	private function get_item_settings( $item_id ) {
 		$settings = get_post_meta( absint( $item_id ), self::SETTINGS_META_KEY, true );
 
-		return $this->switcher->normalize_args( is_array( $settings ) ? $settings : array() );
+		/*
+		 * A switcher just added to a menu has no saved settings yet. It starts
+		 * with flags on, so the menu shows them before anything is saved.
+		 */
+		if ( ! is_array( $settings ) ) {
+			$settings = array( 'show_flags' => true );
+		}
+
+		return $this->switcher->normalize_args( $settings );
 	}
 
 	/**

@@ -47,6 +47,9 @@ final class LanguageSwitcher {
 		 */
 		'unavailable_behavior' => 'hide',
 		'show_flags'           => false,
+
+		// Dropdown only: the button shows just the flag, the list keeps its labels.
+		'toggle_flag_only'     => false,
 		'show_disabled'        => false,
 		'aria_label'           => '',
 		'class_name'           => '',
@@ -161,6 +164,7 @@ final class LanguageSwitcher {
 		$args['hide_current']         = $this->normalize_boolean( $args['hide_current'] );
 		$args['hide_missing']         = $this->normalize_boolean( $args['hide_missing'] );
 		$args['show_flags']           = $this->normalize_boolean( $args['show_flags'] );
+		$args['toggle_flag_only']     = $this->normalize_boolean( $args['toggle_flag_only'] );
 		$args['show_disabled']        = $this->normalize_boolean( $args['show_disabled'] );
 		$args['aria_label']           = is_scalar( $args['aria_label'] )
 			? sanitize_text_field( (string) $args['aria_label'] )
@@ -181,6 +185,27 @@ final class LanguageSwitcher {
 		if ( 'flag' === $args['display'] ) {
 			$args['show_flags'] = true;
 		}
+
+		return $args;
+	}
+
+	/**
+	 * Returns the arguments used for a dropdown's toggle, the always-visible
+	 * entry that names the current language.
+	 *
+	 * With toggle_flag_only the toggle shows only the flag, whatever the list
+	 * below it shows. The name stays as the hidden accessible label.
+	 *
+	 * @param array<string, mixed> $args Normalized switcher arguments.
+	 * @return array<string, mixed>
+	 */
+	public function get_toggle_args( array $args ) {
+		if ( empty( $args['toggle_flag_only'] ) ) {
+			return $args;
+		}
+
+		$args['display']    = 'flag';
+		$args['show_flags'] = true;
 
 		return $args;
 	}
@@ -281,15 +306,16 @@ final class LanguageSwitcher {
 
 		if ( 'dropdown' === $args['layout'] ) {
 			$current      = $this->url_manager->get_current_language();
+			$toggle_args  = $this->get_toggle_args( $args );
 			$summary_item = null === $current
 				? null
 				: array(
 					'label'    => $this->get_item_label( $current, $args['display'] ),
-					'flag_url' => $this->get_flag_url( $current, $args ),
+					'flag_url' => $this->get_flag_url( $current, $toggle_args ),
 				);
 			$summary      = null === $current
 				? esc_html( $args['aria_label'] )
-				: $this->render_language_content( $current, $args, $summary_item );
+				: $this->render_language_content( $current, $toggle_args, $summary_item );
 			$list         = '<details class="shapetranslate-switcher__dropdown"><summary>' . $summary . '</summary>' . $list . '</details>';
 		}
 
@@ -358,6 +384,7 @@ final class LanguageSwitcher {
 			),
 			'span'    => array(
 				'class'         => true,
+				'dir'           => true,
 				'style'         => true,
 				'aria-disabled' => true,
 				'aria-hidden'   => true,
@@ -634,7 +661,6 @@ final class LanguageSwitcher {
 		$language_code = isset( $language['language_code'] )
 			? sanitize_key( $language['language_code'] )
 			: '';
-		$direction     = LanguageTag::direction( $language );
 		$item['label'] = isset( $item['label'] ) && is_scalar( $item['label'] )
 			? sanitize_text_field( (string) $item['label'] )
 			: $this->get_item_label( $language, $args['display'] );
@@ -651,7 +677,7 @@ final class LanguageSwitcher {
 			$status = '<span class="shapetranslate-switcher__status">' . esc_html__( 'Translation unavailable', 'shapetranslate' ) . '</span>';
 		}
 
-		$attributes = ' lang="' . esc_attr( $language_code ) . '" dir="' . esc_attr( $direction ) . '"';
+		$attributes = ' lang="' . esc_attr( $language_code ) . '"';
 
 		if ( '' !== $url && ( $available || $fallback ) ) {
 			$link_attributes  = ' href="' . esc_url( $url ) . '"';
@@ -694,7 +720,13 @@ final class LanguageSwitcher {
 		$flag_url = null !== $item && isset( $item['flag_url'] ) && is_scalar( $item['flag_url'] )
 			? (string) $item['flag_url']
 			: '';
-		$flag     = '';
+
+		// An item built without flags can still be asked for one, as a flag-only toggle is.
+		if ( '' === $flag_url && $args['show_flags'] ) {
+			$flag_url = $this->get_flag_url( $language, $args );
+		}
+
+		$flag = '';
 
 		if ( $args['show_flags'] && '' !== $flag_url ) {
 			$flag = sprintf(
@@ -744,7 +776,7 @@ final class LanguageSwitcher {
 			? 'shapetranslate-switcher__label shapetranslate-switcher__label--hidden screen-reader-text'
 			: 'shapetranslate-switcher__label';
 
-		return $flag . '<span class="' . $label_class . '">' . esc_html( $label ) . '</span>';
+		return $flag . '<span class="' . $label_class . '" dir="auto">' . esc_html( $label ) . '</span>';
 	}
 
 	/**

@@ -336,28 +336,112 @@ final class SetupWizardPage {
 		<?php
 	}
 
-	/** Displays the completion summary. */
+	/** Displays the completion summary and the next steps. */
 	private function render_step_5() {
 		$languages = $this->language_manager->get_languages( true );
+		$names     = array();
+
+		foreach ( $languages as $language ) {
+			$names[] = isset( $language['native_name'] ) && '' !== $language['native_name'] ? $language['native_name'] : $language['name'];
+		}
 		?>
-		<h2><?php esc_html_e( 'Ready to Translate', 'shapetranslate' ); ?></h2>
-		<p>
+		<h2><?php esc_html_e( 'You’re ready to translate', 'shapetranslate' ); ?></h2>
+		<p class="shapetranslate-wizard-summary">
 		<?php
 		echo esc_html(
 			sprintf(
-				/* translators: %d: number of enabled languages. */
-				_n( '%d language is enabled.', '%d languages are enabled.', count( $languages ), 'shapetranslate' ),
-				count( $languages )
+				/* translators: 1: number of enabled languages, 2: comma-separated language names. */
+				_n( '%1$d language is enabled: %2$s.', '%1$d languages are enabled: %2$s.', count( $languages ), 'shapetranslate' ),
+				count( $languages ),
+				implode( ', ', $names )
 			)
 		);
 		?>
 		</p>
-		<p><code>[shapetranslate_switcher]</code></p>
-		<p class="description"><?php esc_html_e( 'A single placement can override these settings by passing them along with it. Settings > Switcher writes that snippet for you.', 'shapetranslate' ); ?></p>
+
+		<ul class="shapetranslate-wizard-next">
+			<?php foreach ( $this->next_step_cards() as $card ) : ?>
+				<li class="<?php echo empty( $card['highlight'] ) ? '' : 'is-pro'; ?>">
+					<span class="dashicons <?php echo esc_attr( $card['icon'] ); ?>" aria-hidden="true"></span>
+					<span class="shapetranslate-wizard-next__text">
+						<strong><?php echo esc_html( $card['title'] ); ?></strong>
+						<?php echo esc_html( $card['text'] ); ?>
+					</span>
+					<a href="<?php echo esc_url( $card['url'] ); ?>"<?php echo empty( $card['external'] ) ? '' : ' target="_blank" rel="noopener noreferrer"'; ?>>
+						<?php echo esc_html( $card['label'] ); ?>
+						<?php if ( ! empty( $card['external'] ) ) : ?>
+							<span class="screen-reader-text"><?php esc_html_e( '(opens in a new tab)', 'shapetranslate' ); ?></span>
+						<?php endif; ?>
+					</a>
+				</li>
+			<?php endforeach; ?>
+		</ul>
+
+		<p class="description">
+			<?php esc_html_e( 'Add the language switcher anywhere with', 'shapetranslate' ); ?>
+			<code>[shapetranslate_switcher]</code>
+		</p>
 		<?php $this->form_start( 5 ); ?>
 		<?php $this->form_end( __( 'Finish Setup', 'shapetranslate' ), 4 ); ?>
-		<p class="shapetranslate-wizard-links"><a href="<?php echo esc_url( admin_url( 'admin.php?page=shapetranslate' ) ); ?>"><?php esc_html_e( 'Languages', 'shapetranslate' ); ?></a><a href="<?php echo esc_url( admin_url( 'admin.php?page=shapetranslate-translations' ) ); ?>"><?php esc_html_e( 'Translations', 'shapetranslate' ); ?></a><a href="<?php echo esc_url( admin_url( 'admin.php?page=shapetranslate-settings' ) ); ?>"><?php esc_html_e( 'Settings', 'shapetranslate' ); ?></a></p>
 		<?php
+	}
+
+	/**
+	 * Returns the next-step cards shown on the final wizard step.
+	 *
+	 * @return array<int, array<string, mixed>>
+	 */
+	private function next_step_cards() {
+		/*
+		 * Classic themes assign a menu per language on Manage Locations; block
+		 * themes build menus as Navigation blocks in the Site Editor.
+		 */
+		$menu_url = current_theme_supports( 'menus' ) || ! wp_is_block_theme()
+			? admin_url( 'nav-menus.php?action=locations' )
+			: admin_url( 'site-editor.php?p=%2Fnavigation' );
+
+		$cards = array(
+			array(
+				'icon'  => 'dashicons-admin-page',
+				'title' => __( 'Translate your pages', 'shapetranslate' ),
+				'text'  => __( 'Add translations from the language column.', 'shapetranslate' ),
+				'url'   => admin_url( 'edit.php?post_type=page' ),
+				'label' => __( 'View Pages', 'shapetranslate' ),
+			),
+			array(
+				'icon'  => 'dashicons-menu',
+				'title' => __( 'Create menu translations', 'shapetranslate' ),
+				'text'  => __( 'Assign a menu to each language’s location.', 'shapetranslate' ),
+				'url'   => $menu_url,
+				'label' => __( 'Translate Menus', 'shapetranslate' ),
+			),
+			array(
+				'icon'     => 'dashicons-book',
+				'title'    => __( 'Read the documentation', 'shapetranslate' ),
+				'text'     => __( 'Step-by-step guides for every feature.', 'shapetranslate' ),
+				'url'      => OverviewModule::DOCS_URL,
+				'label'    => __( 'Documentation', 'shapetranslate' ),
+				'external' => true,
+			),
+			array(
+				'icon'      => 'dashicons-star-filled',
+				'title'     => __( 'Upgrade to Pro', 'shapetranslate' ),
+				'text'      => __( 'AI and DeepL translation, WooCommerce, and team workflow.', 'shapetranslate' ),
+				'url'       => OverviewModule::pro_url( 'setup-wizard' ),
+				'label'     => __( 'Upgrade to Pro', 'shapetranslate' ),
+				'external'  => true,
+				'highlight' => true,
+			),
+		);
+
+		/**
+		 * Filters the next-step cards on the final setup wizard step.
+		 *
+		 * @param array<int, array<string, mixed>> $cards Cards with icon, title, text, url and label.
+		 */
+		$filtered = apply_filters( 'shapetranslate_setup_next_steps', $cards );
+
+		return is_array( $filtered ) ? $filtered : $cards;
 	}
 
 	/**
@@ -432,8 +516,6 @@ final class SetupWizardPage {
 			$message = get_transient( $key );
 			delete_transient( $key );
 			printf( '<div class="shapetranslate-notice notice notice-error"><p>%s</p></div>', esc_html( is_string( $message ) ? $message : __( 'ShapeTranslate could not save this setup step.', 'shapetranslate' ) ) );
-		} elseif ( 'setup_complete' === $notice ) {
-			echo '<div class="shapetranslate-notice notice notice-success"><p>' . esc_html__( 'ShapeTranslate setup is complete.', 'shapetranslate' ) . '</p></div>';
 		}
 	}
 }

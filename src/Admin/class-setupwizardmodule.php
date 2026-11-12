@@ -131,9 +131,23 @@ final class SetupWizardModule implements ModuleInterface {
 		 * A handler returns a step number when it wants the wizard to stay put,
 		 * which is how several languages are added without leaving the page.
 		 */
+		// Finishing the wizard hands the site owner over to the settings screen.
+		if ( 5 === $step ) {
+			wp_safe_redirect(
+				add_query_arg(
+					array(
+						'page'                  => 'shapetranslate-settings',
+						'shapetranslate_notice' => 'setup_complete',
+					),
+					admin_url( 'admin.php' )
+				)
+			);
+			exit;
+		}
+
 		$next = is_int( $result ) ? min( 5, max( 1, $result ) ) : min( 5, $step + 1 );
 
-		$this->redirect( $next, 5 === $step ? 'setup_complete' : '' );
+		$this->redirect( $next );
 	}
 
 	/** Removes one language from the wizard language list. */
@@ -554,7 +568,7 @@ final class SetupWizardModule implements ModuleInterface {
 			'step' => min( 5, max( 1, absint( $step ) ) ),
 		);
 
-		if ( in_array( $notice, array( 'setup_error', 'setup_complete' ), true ) ) {
+		if ( 'setup_error' === $notice ) {
 			$args['shapetranslate_notice'] = $notice;
 		}
 

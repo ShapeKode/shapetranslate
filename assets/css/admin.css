@@ -173,6 +173,73 @@
 	border-top: 1px solid #c3c4c7;
 }
 
+.shapetranslate-setup-complete.notice {
+	max-width: 1100px;
+	margin: 16px 0 20px;
+	padding: 20px 40px 20px 20px;
+	box-sizing: border-box;
+}
+
+.shapetranslate-setup-complete__head {
+	display: flex;
+	gap: 14px;
+	align-items: flex-start;
+}
+
+.shapetranslate-setup-complete__head .dashicons {
+	width: 36px;
+	height: 36px;
+	color: #00a32a;
+	font-size: 36px;
+}
+
+.shapetranslate-settings .shapetranslate-setup-complete__head h2 {
+	margin: 2px 0 4px;
+	font-size: 18px;
+}
+
+.shapetranslate-setup-complete__head p {
+	margin: 0;
+	padding: 0;
+	color: #50575e;
+}
+
+.shapetranslate-setup-complete__steps {
+	display: grid;
+	grid-template-columns: repeat( 3, minmax( 0, 1fr ) );
+	gap: 12px;
+	margin: 18px 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+.shapetranslate-setup-complete__steps li {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	margin: 0;
+	padding: 14px;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+	background: #f6f7f7;
+}
+
+.shapetranslate-setup-complete__steps span {
+	flex: 1;
+	color: #50575e;
+}
+
+.shapetranslate-setup-complete__steps .button {
+	align-self: flex-start;
+	margin-top: 4px;
+}
+
+@media screen and ( max-width: 782px ) {
+	.shapetranslate-setup-complete__steps {
+		grid-template-columns: 1fr;
+	}
+}
+
 /* End 3. Settings screen shell */
 
 /* ------------------------------------------------------------------------
@@ -250,9 +317,66 @@
 	align-items: center;
 }
 
-.shapetranslate-wizard-links {
+.shapetranslate-wizard-summary {
+	margin: 0 0 16px;
+	font-size: 14px;
+}
+
+.shapetranslate-wizard-next {
+	max-width: 720px;
+	margin: 0 0 16px;
+	padding: 0;
+	border: 1px solid #dcdcde;
+	background: #fff;
+	list-style: none;
+}
+
+.shapetranslate-wizard-next li {
 	display: flex;
-	gap: 18px;
+	gap: 12px;
+	align-items: center;
+	margin: 0;
+	padding: 12px 16px;
+	border-top: 1px solid #f0f0f1;
+}
+
+.shapetranslate-wizard-next li:first-child {
+	border-top: 0;
+}
+
+.shapetranslate-wizard-next .dashicons {
+	flex: 0 0 auto;
+	color: #2271b1;
+}
+
+.shapetranslate-wizard-next__text {
+	flex: 1;
+	color: #50575e;
+}
+
+.shapetranslate-wizard-next__text strong {
+	display: block;
+	color: #1d2327;
+}
+
+.shapetranslate-wizard-next a {
+	flex: 0 0 auto;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.shapetranslate-wizard-next a::after {
+	content: " \2192";
+}
+
+.shapetranslate-wizard-next .is-pro .dashicons,
+.shapetranslate-wizard-next .is-pro a {
+	color: #10ac84;
+}
+
+.shapetranslate-wizard-next .is-pro a:hover,
+.shapetranslate-wizard-next .is-pro a:focus {
+	color: #0d9470;
 }
 
 /* End 4. Setup wizard */

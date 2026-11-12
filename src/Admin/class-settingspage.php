@@ -905,10 +905,70 @@ final class SettingsPage {
 			$notices[ $notice ] = array( 'error', is_string( $message ) ? $message : __( 'ShapeTranslate could not save these settings.', 'shapetranslate' ) );
 		}
 
+		if ( 'setup_complete' === $notice ) {
+			$this->render_setup_complete();
+			return;
+		}
+
 		if ( ! isset( $notices[ $notice ] ) ) {
 			return;
 		}
 
 		printf( '<div class="shapetranslate-notice notice notice-%1$s is-dismissible"><p>%2$s</p></div>', esc_attr( $notices[ $notice ][0] ), esc_html( $notices[ $notice ][1] ) );
+	}
+
+	/** Renders the welcome panel shown once the setup wizard is finished. */
+	private function render_setup_complete() {
+		$count = count( $this->language_manager->get_languages( true ) );
+		$steps = array(
+			array(
+				'title' => __( 'Translate your content', 'shapetranslate' ),
+				'text'  => __( 'Create translated versions of your pages, posts and terms.', 'shapetranslate' ),
+				'url'   => admin_url( 'admin.php?page=shapetranslate-translations' ),
+				'label' => __( 'Open Translations', 'shapetranslate' ),
+			),
+			array(
+				'title' => __( 'Place the language switcher', 'shapetranslate' ),
+				'text'  => __( 'Fine-tune how visitors pick a language, or copy a ready-made snippet.', 'shapetranslate' ),
+				'url'   => admin_url( 'admin.php?page=shapetranslate-settings&tab=switcher' ),
+				'label' => __( 'Switcher settings', 'shapetranslate' ),
+			),
+			array(
+				'title' => __( 'Manage languages', 'shapetranslate' ),
+				'text'  => __( 'Add more languages, change flags, or reorder them at any time.', 'shapetranslate' ),
+				'url'   => admin_url( 'admin.php?page=shapetranslate' ),
+				'label' => __( 'View Languages', 'shapetranslate' ),
+			),
+		);
+		?>
+		<div class="shapetranslate-setup-complete notice notice-success is-dismissible">
+			<div class="shapetranslate-setup-complete__head">
+				<span class="dashicons dashicons-yes-alt" aria-hidden="true"></span>
+				<div>
+					<h2><?php esc_html_e( 'Your site is ready to go multilingual', 'shapetranslate' ); ?></h2>
+					<p>
+					<?php
+					echo esc_html(
+						sprintf(
+							/* translators: %d: number of enabled languages. */
+							_n( 'Setup is complete and %d language is enabled. Review the settings below or continue with the next steps.', 'Setup is complete and %d languages are enabled. Review the settings below or continue with the next steps.', $count, 'shapetranslate' ),
+							$count
+						)
+					);
+					?>
+					</p>
+				</div>
+			</div>
+			<ol class="shapetranslate-setup-complete__steps">
+				<?php foreach ( $steps as $step ) : ?>
+					<li>
+						<strong><?php echo esc_html( $step['title'] ); ?></strong>
+						<span><?php echo esc_html( $step['text'] ); ?></span>
+						<a class="button" href="<?php echo esc_url( $step['url'] ); ?>"><?php echo esc_html( $step['label'] ); ?></a>
+					</li>
+				<?php endforeach; ?>
+			</ol>
+		</div>
+		<?php
 	}
 }

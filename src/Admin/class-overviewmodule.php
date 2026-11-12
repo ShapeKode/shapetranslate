@@ -25,6 +25,13 @@ final class OverviewModule implements ModuleInterface {
 	const PRO_URL = 'https://shapekode.com/product/shapetranslate';
 
 	/**
+	 * Plugin documentation.
+	 *
+	 * @var string
+	 */
+	const DOCS_URL = 'https://shapekode.com/product/shapetranslate/shapetranslate-documentation';
+
+	/**
 	 * Registered admin screen hook suffix.
 	 *
 	 * @var string
@@ -36,6 +43,38 @@ final class OverviewModule implements ModuleInterface {
 		add_action( 'admin_menu', array( $this, 'register_menu' ), 30 );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_assets' ) );
 		add_action( 'admin_head', array( $this, 'print_upgrade_menu_style' ) );
+		add_action( 'admin_footer', array( $this, 'print_upgrade_menu_script' ) );
+		add_filter( 'plugin_action_links_' . SHAPETRANSLATE_BASENAME, array( $this, 'add_action_links' ), PHP_INT_MAX );
+	}
+
+	/**
+	 * Adds Settings and Upgrade to Pro links to the Plugins screen row.
+	 *
+	 * @param array<int|string, string> $links Existing action links.
+	 * @return array<int|string, string>
+	 */
+	public function add_action_links( $links ) {
+		if ( ! current_user_can( AdminModule::capability() ) ) {
+			return $links;
+		}
+
+		$settings = sprintf(
+			'<a href="%1$s">%2$s</a>',
+			esc_url( admin_url( 'admin.php?page=shapetranslate-settings' ) ),
+			esc_html__( 'Settings', 'shapetranslate' )
+		);
+
+		$upgrade = sprintf(
+			'<a href="%1$s" target="_blank" rel="noopener noreferrer" style="color:#10ac84;font-weight:600;">%2$s</a>',
+			esc_url( self::pro_url( 'plugins-page' ) ),
+			esc_html__( 'Upgrade to Pro', 'shapetranslate' )
+		);
+
+		// Default links stay first; ours follow, with Upgrade to Pro always last.
+		$links['settings'] = $settings;
+		$links['upgrade']  = $upgrade;
+
+		return $links;
 	}
 
 	/**
@@ -44,7 +83,7 @@ final class OverviewModule implements ModuleInterface {
 	 * @param string $medium Admin location of the link.
 	 * @return string
 	 */
-	private static function pro_url( $medium ) {
+	public static function pro_url( $medium ) {
 		return add_query_arg(
 			array(
 				'utm_source'   => 'plugin',
@@ -103,6 +142,24 @@ final class OverviewModule implements ModuleInterface {
 			#adminmenu .toplevel_page_shapetranslate .wp-submenu a:has(> .shapetranslate-upgrade-menu):focus { background: #0d9470; color: #fff; box-shadow: none; }
 		</style>
 		<?php
+	}
+
+	/**
+	 * Opens the Upgrade to Pro menu link in a new tab.
+	 *
+	 * Admin menu items have no target attribute, so it is set on the anchor
+	 * after the menu is printed.
+	 *
+	 * @return void
+	 */
+	public function print_upgrade_menu_script() {
+		if ( ! current_user_can( AdminModule::capability() ) ) {
+			return;
+		}
+
+		wp_print_inline_script_tag(
+			"document.querySelectorAll( '#adminmenu .shapetranslate-upgrade-menu' ).forEach( function ( el ) { var a = el.closest( 'a' ); if ( a ) { a.target = '_blank'; a.rel = 'noopener noreferrer'; } } );"
+		);
 	}
 
 	/**
@@ -249,7 +306,7 @@ final class OverviewModule implements ModuleInterface {
 					__( 'Translation columns and admin language filter', 'shapetranslate' )          => true,
 					__( 'Default category and terms per language', 'shapetranslate' )                => true,
 					__( 'Outdated translation detection', 'shapetranslate' )                         => false,
-					__( 'Show a widget in one language only', 'shapetranslate' )                     => false,
+					__( 'Show a widget in one language only', 'shapetranslate' )                     => true,
 				),
 			),
 			array(

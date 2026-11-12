@@ -285,6 +285,15 @@
 	vertical-align: middle;
 }
 
+/*
+ * Themes pad a menu link on both sides and put the submenu arrow after it.
+ * Beside a word that reads as normal spacing; beside a lone flag it leaves
+ * the arrow stranded, so a flag-only toggle keeps the arrow close.
+ */
+ul li.menu-item.menu-item-shapetranslate-switcher.shapetranslate-switcher-parent--flag-only > a {
+	padding-inline-end: 0.35em;
+}
+
 /* End 6. Screen reader text and menu integration */
 
 /* ------------------------------------------------------------------------

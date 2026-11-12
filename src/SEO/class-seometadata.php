@@ -298,10 +298,30 @@ final class SeoMetadata {
 	 * Empty or external canonicals are preserved because a provider or developer
 	 * may have intentionally suppressed or replaced the URL.
 	 *
-	 * @param mixed $canonical Existing canonical URL.
+	 * SEOPress passes the whole `<link rel="canonical">` tag rather than the
+	 * URL, so the address inside it is read out, made language-specific, and
+	 * put back. Without this its canonicals were never touched, and a home
+	 * page showing the latest posts named the site root in every language.
+	 *
+	 * @param mixed $canonical Existing canonical URL, or a canonical link tag.
 	 * @return mixed
 	 */
 	public function filter_provider_canonical( $canonical ) {
+		if ( is_string( $canonical ) && false !== stripos( $canonical, '<link' ) ) {
+			if ( ! preg_match( '/\bhref=(["\'])(.*?)\1/i', $canonical, $match ) ) {
+				return $canonical;
+			}
+
+			$url      = html_entity_decode( $match[2], ENT_QUOTES | ENT_HTML5, 'UTF-8' );
+			$filtered = $this->filter_provider_canonical( $url );
+
+			if ( ! is_string( $filtered ) || $filtered === $url ) {
+				return $canonical;
+			}
+
+			return str_replace( $match[0], 'href=' . $match[1] . esc_url( $filtered ) . $match[1], $canonical );
+		}
+
 		if (
 			! is_string( $canonical )
 			|| '' === $canonical

@@ -5,7 +5,7 @@
  * Plugin URI:  https://shapekode.com/
  * Author:      ShapeKode
  * Author URI:  https://profiles.wordpress.org/shapekode22/
- * Version:     1.0.3
+ * Version:     1.0.6
  * Requires at least: 6.4
  * Requires PHP: 7.4
  * License:     GPLv2 or later
@@ -19,7 +19,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-defined( 'SHAPETRANSLATE_VERSION' ) || define( 'SHAPETRANSLATE_VERSION', '1.0.3' );
+defined( 'SHAPETRANSLATE_VERSION' ) || define( 'SHAPETRANSLATE_VERSION', '1.0.6' );
 defined( 'SHAPETRANSLATE_MINIMUM_PHP_VERSION' ) || define( 'SHAPETRANSLATE_MINIMUM_PHP_VERSION', '7.4' );
 defined( 'SHAPETRANSLATE_MINIMUM_WP_VERSION' ) || define( 'SHAPETRANSLATE_MINIMUM_WP_VERSION', '6.4' );
 defined( 'SHAPETRANSLATE_FILE' ) || define( 'SHAPETRANSLATE_FILE', __FILE__ );

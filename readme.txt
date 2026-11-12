@@ -4,7 +4,7 @@ Tags: multilingual, language, localization, translation, translate
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.3
+Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,7 +22,9 @@ The **built-in setup wizard** helps you configure your languages, choose a URL f
 
 ShapeTranslate supports **classic themes, block themes, Elementor, and several popular header and footer builders.**
 
-👉 [Demo](https://shapekode.com/product/shapetranslate-demo/) | [Documentation](https://shapekode.com/product/shapetranslate/shapetranslate-documentation) | [RoadMaps](https://shapekode.com/product/shapetranslate/roadmap) | [Get Pro](https://shapekode.com/product/shapetranslate) 👈
+👉 [Demo](https://shapekode.com/product/shapetranslate-demo/) | [Try Admin Demo](https://shapekode.com/product/shapetranslate-demo/en/try-demo/) | [Documentation](https://shapekode.com/product/shapetranslate/shapetranslate-documentation) | [RoadMaps](https://shapekode.com/product/shapetranslate/roadmap) | [Get Pro](https://shapekode.com/product/shapetranslate) 👈
+
+
 
 = Overview and features =
 
@@ -46,6 +48,27 @@ https://www.youtube.com/watch?v=CZIrnl2VkKQ
 * **Multilingual SEO:** Generate language-specific URLs, `hreflang` links, and translated sitemap entries.
 * **Right-to-left support:** Support RTL languages in the frontend and translation editor.
 * **Developer API:** Access language information and post or term translations through ShapeTranslate functions.
+
+= ShapeTranslate Pro =
+
+Saves time on translating your site with some very useful extra features such as:
+
+* **AI translation:** Translate with OpenAI, Anthropic, Google and other providers through WordPress Connectors, or with DeepL.
+* **One-click and bulk translation:** Translate from the editor, or many posts at once through a queue with retry and pause.
+* **Auto-translate on publish:** Create translations automatically when the original is published.
+* **Glossary, translation memory and tone presets** for consistent translations.
+* **Translation workflow:** Translating, In review and Approved statuses, assignments, email alerts, and a translator role limited to assigned languages.
+* **Outdated translation detection** when the original changes.
+* **WooCommerce:** Translate products, categories, attributes and store pages, with shared stock, price and variation sync, emails in the customer's language, and translated endpoint slugs.
+* **FluentCart** multilingual store support.
+* **Bricks Builder:** Translate Bricks pages, templates, components and query loops, with a Bricks language switcher element and AI translation of Bricks layouts.
+* **ACF / Secure Custom Fields:** Translate, copy or sync each field.
+* **Same URL slug** for posts or terms across languages, and **translated permalink bases** such as `/de/kategorie/`.
+* **Advanced SEO:** Language-aware Yoast, Rank Math and SEOPress sitemaps, translatable schema, Open Graph locale alternates, and breadcrumbs per language.
+* **On-page editing** of titles, headings and paragraphs.
+* **Access to Priority Support for personalized assistance.**
+
+[Get ShapeTranslate Pro](https://shapekode.com/product/shapetranslate)
 
 = Languages and localization =
 
@@ -133,6 +156,7 @@ Available options include:
 * Floating language switcher positioned in a screen corner.
 * Horizontal lists, vertical lists, and dropdown layouts.
 * Optional flags and current-language visibility settings.
+* Dropdown option to show only the flag of the selected language, while the list keeps its language names.
 * Option to hide languages without an available translation.
 
 Theme developers can also display a language switcher using:
@@ -175,6 +199,18 @@ Compatibility includes supported header and footer builders from:
 * ElementsKit
 * Element Pack
 * Happy Addons
+
+**WooCommerce integration**
+
+(**Supported in ShapeTranslate Pro.**) Translate products, categories, attributes and store pages, with shared stock, price and variation sync, emails in the customer's language, and translated endpoint slugs.
+
+**FluentCart integration**
+
+(**Supported in ShapeTranslate Pro.**) Translate FluentCart products and store pages, with carts, orders and emails in the customer's language.
+
+**Bricks Builder integration**
+
+(**Supported in ShapeTranslate Pro.**) Translate Bricks pages, templates and components, with templates shown in the visitor's language, query loops and filters mapped to each language, and a Bricks language switcher element.
 
 Compatibility applies to the supported integrations and workflows provided by ShapeTranslate; it does not imply that every third-party widget or dynamic feature can be translated.
 
@@ -290,6 +326,20 @@ Yes. Open the Advanced settings tab to export your ShapeTranslate configuration 
 Visit the [ShapeTranslate product page](https://shapekode.com/product/shapetranslate/) to explore the demo and product details.
 
 == Changelog ==
+
+= 1.0.6 =
+* Fix: SEOPress canonical URLs now point to the current language.
+* Fix: Show a widget in one language only
+
+= 1.0.5 =
+* New: Flag-only dropdown toggle for the language switcher.
+* New: Next steps after the setup wizard.
+* Fix: RTL language names flipping the switcher layout.
+
+
+= 1.0.4 =
+* New: ShapeTranslate → Overview page with a Free vs Pro feature comparison.
+* New: "Upgrade to Pro" link in the ShapeTranslate admin menu.
 
 = 1.0.3 =
 * New: "Flag only" option for the language switcher.
